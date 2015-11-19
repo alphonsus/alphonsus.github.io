@@ -2,77 +2,183 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Alphonsus</title>
-    <description>© 2015. Alphonsus. All rights reserved.
+    <description>© 2015 Alfonz Montelibano
 </description>
     <link>http://alphons.us/</link>
     <atom:link href="http://alphons.us/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 26 Jul 2015 14:27:47 +0800</pubDate>
-    <lastBuildDate>Sun, 26 Jul 2015 14:27:47 +0800</lastBuildDate>
+    <pubDate>Fri, 20 Nov 2015 01:45:35 +0800</pubDate>
+    <lastBuildDate>Fri, 20 Nov 2015 01:45:35 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>Lorem ipsum</title>
-        <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+        <title>Designing Levels for Necromorph</title>
+        <description>&lt;p class=&quot;post-intro&quot;&gt;
+Last week I &lt;a href=&quot;#&quot;&gt;made a post about&lt;/a&gt; our latest Ludum Dare game, Necromorph. This time, as the lead level designer for this month&#39;s LD, I&#39;d like to talk more about our thought process while designing the levels for our short game.
+&lt;/p&gt;
 
-&lt;p&gt;Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;p&gt;I was focusing on making the level design both challenging and satisfying in a not-frustrating kind of way. More importantly, I wanted it to be self-teaching. Although the game works like a usual platformer game where you can jump and kill enemies, the game has a few unusual mechanics which I don’t want to explicitly explain to the player. I wanted the level design itself to teach the player, and the player to learn by doing. Also, the game was too short anyway that pretty much the whole game is a tutorial, kind of like Portal.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-csharp&quot; data-lang=&quot;csharp&quot;&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Thing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;Anyway, without further ado let’s hop right on to the first level!&lt;/p&gt;
 
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Hello world&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;h1 id=&quot;level-i-the-cavern&quot;&gt;Level I: The Cavern&lt;/h1&gt;
 
-    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;The Cavern&lt;/em&gt; is the intro “tutorial” level where we teach the player the basic mechanics of the game. The Arrow Keys + Z controls are slapped right into your face and you’re kind of inside a pit where you have no other choice but to jump over the spikes.&lt;/p&gt;
 
-&lt;p&gt;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/necromorph-levels/lv1-1.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;img-caption&quot;&gt;Pretty basic platformer stuff.&lt;/p&gt;
+
+&lt;p&gt;The only way to go through the first jump to the left and the second jump to the right is by &lt;em&gt;holding&lt;/em&gt; the jump button. If the player only taps the jump button, he will most likely not reach the platform. This teaches the player that the game has variable jump – you can make short jumps by quickly tapping Z, or bigger ones by holding it down much longer.&lt;/p&gt;
+
+&lt;p&gt;Just to make sure that the player gets this, we then give him a much longer jump over a strip of spikes. The only way to land on the other side successfully is to hold the jump button all the way through – the maximum distance a jump can reach.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/necromorph-levels/lv1-2.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;img-caption&quot;&gt;Hold that jump button down or you&#39;ll end up like this!&lt;/p&gt;
+
+&lt;p&gt;The next section introduces a new platform type – wooden platforms. The only path is by going through the wooden platforms in which the player learns you can go up and down through them by pressing the down arrow. Kids’ stuff.&lt;/p&gt;
+
+&lt;p&gt;Finally you arrive at the first exit door with an up arrow above it. So you stand in front of it and press, well, the up arrow and level 1 is complete.&lt;/p&gt;
+
+&lt;!-- ![](/images/necromorph-levels/lv1-3.gif) --&gt;
+
+&lt;h1 id=&quot;level-ii-the-chasm&quot;&gt;Level II: The Chasm&lt;/h1&gt;
+
+&lt;p&gt;On to the next level. You are now introduced to the first enemy, the melee knight. The knight is idle and harmless with a big-ass X button above him, teaching the player the attack mechanic. So now you attack the knight with two strikes, and BOOM. You transform into the knight.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/necromorph-levels/lv2-1.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Next, I wanted to introduce another enemy type right away – the archer. How I did this was I created two pathways for the player: a) the platform on the top with a block that shields you from his shots, or b) the small ledge and platform below, out of the archer’s reach.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;img src=&quot;/images/necromorph-levels/lv2-2.png&quot; alt=&quot;&quot; /&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Either way, you are safe and most likely won’t get killed by the arrows. This way, you are given time to breathe and study the archer’s behavior in a not-frustrating and not-under-pressure way. You might learn that 1) the archer only shoots when you are a certain distance from him, and 2) there’s a short window between his attacks.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/necromorph-levels/lv2-3.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With the help of your knowledge about wooden platforms in Level 1, you wait for the archer to fire once more then you go in for the kill. &lt;em&gt;Bam&lt;/em&gt;, now you’re the archer. You walk a bit and realize that archers are more agile and walk faster. You then see two more enemies on the right. You are kind of given the option to choose which one to transform into by killing it second.&lt;/p&gt;
+
+&lt;p&gt;The rest of the level is then pretty straightforward until you get to the last enemy blocking the wooden platform, teaching you that bows can shoot upwards:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/necromorph-levels/lv2-5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;level-iii-the-hollow&quot;&gt;Level III: The Hollow&lt;/h1&gt;
+
+&lt;p&gt;The first section of The Hollow is pretty interesting: you see an archer on the left, and one below guarded by a knight. Instinctively, as shown above, you might take down the first archer on the left, kill the knight with two shots, then walk towards the second archer:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/necromorph-levels/lv3-1.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;However, there is a slightly better approach: take down the archer behind the knight first by jumping and shooting, &lt;em&gt;then&lt;/em&gt; kill the meat shield knight. This is one section of the game where there’s a little strategy or puzzle involved – sometimes you might want to plan out the order of your attacks.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/necromorph-levels/lv3-2.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;All that happens while a little bat-looking guy is flapping his wings over some spikes. This is the 3rd enemy type and its ability is a flappy-bird like control where you hover up a bit when the jump button is pressed. I explicitly show this to the player by placing the bat above the spikes while he is constantly hovering.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;To be continued…&lt;/em&gt;&lt;/p&gt;
+
+&lt;!-- To utilize the new flying mechanic, I made the next  --&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://supernaught.itch.io/necromorph&quot;&gt;Play Necromorph on itch.io »&lt;/a&gt;
+&lt;br /&gt;
+&lt;a href=&quot;http://ludumdare.com/compo/ludum-dare-33/?action=preview&amp;amp;uid=25961&quot;&gt;Ludum Dare Entry Page »&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Mon, 20 Jul 2015 19:50:14 +0800</pubDate>
-        <link>http://alphons.us/blog/lorem-ipsum/</link>
-        <guid isPermaLink="true">http://alphons.us/blog/lorem-ipsum/</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>Pixlie Arts</title>
-        <description>&lt;p&gt;Today I got myself a copy of &lt;a href=&quot;http://pyxeledit.com&quot;&gt;PyxelEdit&lt;/a&gt;, a pixel art editor considered by many as the best in the market. I am not a pixel artist but looking at PyxelEdit tutorials made making pixel art look easy. I got curious and so  wanted to try it myself and damn right it &lt;em&gt;is&lt;/em&gt; easy.&lt;/p&gt;
-
-&lt;p&gt;Here’s some Fez-inspired stuff I came up with in less than 5 minutes:&lt;br /&gt;
-&lt;img src=&quot;/images/pixelart.png&quot; alt=&quot;test&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The girlfriend and me:&lt;br /&gt;
-&lt;img src=&quot;/images/pixelart2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 20 Jul 2015 00:00:00 +0800</pubDate>
-        <link>http://alphons.us/blog/pixlie-arts/</link>
-        <guid isPermaLink="true">http://alphons.us/blog/pixlie-arts/</guid>
+        <pubDate>Tue, 15 Sep 2015 00:00:00 +0800</pubDate>
+        <link>http://alphons.us/designing-levels-for-necromorph/</link>
+        <guid isPermaLink="true">http://alphons.us/designing-levels-for-necromorph/</guid>
         
         
         <category>gamedev</category>
         
-        <category>pixelart</category>
+        <category>ludumdare</category>
         
       </item>
     
       <item>
-        <title>LDJAM Bot tweets your Ludum Dare games!</title>
-        <description>&lt;p&gt;I had been itching to try and make some cool stuff with Python for days now. So today I had this idea for a Twitter bot that selects a random game from the &lt;a href=&quot;http://ludumdare.com/compo&quot;&gt;Ludum Dare&lt;/a&gt; website and tweets it along with the dev’s username and the game’s primary screenshot.&lt;/p&gt;
+        <title>Necromorph: Our Ludum Dare 33 Game</title>
+        <description>&lt;p class=&quot;post-intro&quot;&gt;
+Time for another Ludum Dare game jam, where game devs over the world gather and make a game over the weekend!
+&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/ldjam.png&quot; width=&quot;300&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;This month’s Ludum Dare 33 is our 6th time joining the online game development competition. The theme was “You are the monster,” and this is what Dave and I came up with over the 72-hour game jam.&lt;/p&gt;
 
-&lt;p&gt;Check out &lt;a href=&quot;http://twitter.com/ldjambot&quot;&gt;LDJAM Bot here&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/necromorph/title.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Necromorph&lt;/em&gt; is an action platformer game where you kill monsters and steal their identity – you become the last monster you killed and steal their abilities and appearance.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/necromorph/2.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;img-caption text-center&quot;&gt;Kill monsters, become the monster.&lt;/p&gt;
+
+&lt;p&gt;There are three types of enemy units in the game: the melee knight, the archer, and the gargoyle, each with their own abilities and stats. The knight for example is heavy and slow but has high attack power. Archers are light and fast but needs two arrows to take down the knight.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/necromorph/1.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There’s a total of 3 levels, the first being a tutorial level inspired by genius tutorial levels in games like Super Mario Bros. and Cave Story.&lt;/p&gt;
+
+&lt;p&gt;I shall be making a post-mortem blog post where I will talk more about our thought process on designing the levels, as well as how the game fared on the game jam, so stay tuned! Meanwhile, go play Necromorph!&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;UPDATE: Level design post is &lt;a href=&quot;/designing-levels-for-necromorph&quot;&gt;here&lt;/a&gt;!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://supernaught.itch.io/necromorph&quot;&gt;Play Necromorph on itch.io »&lt;/a&gt;
+&lt;br /&gt;
+&lt;a href=&quot;http://ludumdare.com/compo/ludum-dare-33/?action=preview&amp;amp;uid=25961&quot;&gt;Ludum Dare Entry Page »&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Fri, 10 Apr 2015 00:00:00 +0800</pubDate>
-        <link>http://alphons.us/blog/pong-knights/</link>
-        <guid isPermaLink="true">http://alphons.us/blog/pong-knights/</guid>
+        <pubDate>Wed, 09 Sep 2015 00:00:00 +0800</pubDate>
+        <link>http://alphons.us/necromorph/</link>
+        <guid isPermaLink="true">http://alphons.us/necromorph/</guid>
+        
+        
+        <category>gamedev</category>
+        
+        <category>ludumdare</category>
+        
+      </item>
+    
+      <item>
+        <title>Post-Mortem: Adrift</title>
+        <description>&lt;p class=&quot;post-intro&quot;&gt;
+LD31 is our 6th Ludum Dare. And after our failed attempt last August where both of us got sick on the last day (and later quit on the last few hours of the jam), we had one goal this LD: to make sure we finish the game this time.
+&lt;/p&gt;
+
+&lt;p&gt;And, long story short: finish a game we did!&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;img src=&quot;/images/adrift-postmortem/3.png&quot; alt=&quot;&quot; /&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p class=&quot;img-caption&quot;&gt;
+
+Presenting &lt;a href=&quot;http://ludumdare.com/compo/ludum-dare-31/?action=preview&amp;amp;uid=25961&quot;&gt;Adrift&lt;/a&gt; – a game about making friends, solving puzzles and teamwork.
+
+&lt;/p&gt;
+
+&lt;h1 id=&quot;what-went-well&quot;&gt;What Went Well&lt;/h1&gt;
+
+&lt;p&gt;Pretty much everything in the Art department went well:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Characters.&lt;/strong&gt; We always wanted to make a game with dorky adorable characters. The candy-ish color palette also went well with the cute character design.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Story.&lt;/strong&gt; The last 3 Ludum Dare games we made were fast-paced action games, so we thought hey why not give puzzle-y story-based games a shot? Our initial idea was to let the players get attached to the main character(s) and maybe leave them with an emotional ending. Which leads us to the…&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ending.&lt;/strong&gt; We don’t want to spoil this to you guys so just check out the game and make sure to get to the ending scene! But basically we think we made a pretty decent ending for the really short game.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;what-didnt-go-so-well&quot;&gt;What Didn’t Go So Well&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Level design and mechanics.&lt;/strong&gt; During the first two days we made lots of different puzzle element mechanics such as stepping on switches to activate/deactivate traps or open doors. We planned to make lots of different “mini levels” and compile everything (the whole map, the entire game) on the 3rd day. While we were able to do this, some mechanics weren’t included in the final “master level” due to time constraints, so a lot of hours spent into implementing those unused mechanics were wasted. As a result, the “mini puzzle levels” in the game were pretty repetitive (Blue always pushing boxes) and the new mechanics introduced later into the game weren’t utilized as much.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Gameplay.&lt;/strong&gt; We had lots of interesting puzzles when making the mini levels, but based on past experiences with the previous LD’s, people don’t want to invest a lot of time on your game. So we intended the game’s puzzle-y parts to be not so complex and frustrating to solve. This backfired a lot though because now I think the game isn’t really much fun to play and the puzzles not satisfying to solve. The upside though is most players can easily finish the whole game and see the end scene. And we badly want the players to see the end scene!&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Theme.&lt;/strong&gt; Halfway through the jam and we still couldn’t come up with a concrete connection to the theme other than that the whole game is played in one whole level (or one Unity scene). But hey, finishing a game not related to the theme is better than not finishing a game related to the theme!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;img src=&quot;/images/adrift-postmortem/5.png&quot; alt=&quot;&quot; /&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; Overall, we think we made a pretty solid and adorable game. Although the resulting gameplay wasn’t as fun to play as we thought it would be, everything we planned from the start went right, and the feedback has been really great so far and nothing we didn’t expect.&lt;/p&gt;
+
+&lt;p&gt;If you reached this point, thank you for reading and we hope you enjoy Adrift! See you next Ludum Dare!&lt;/p&gt;
+
+&lt;p&gt;– Alphonsus&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://ludumdare.com/compo/ludum-dare-31/?action=preview&amp;amp;uid=25961&quot;&gt;Ludum Dare Entry Page »&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 30 Dec 2014 00:00:00 +0800</pubDate>
+        <link>http://alphons.us/adrift-postmortem/</link>
+        <guid isPermaLink="true">http://alphons.us/adrift-postmortem/</guid>
         
         
         <category>gamedev</category>
