@@ -14,15 +14,15 @@ dl, dd, ol, ul, figure {
  */
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-size: 12pt;
+  font-size: 17px;
   line-height: 1.7;
-  font-weight: 400;
+  font-weight: 300;
   color: rgba(0, 0, 0, 0.8);
   background-color: #ffffff;
   -webkit-text-size-adjust: 100%; }
 
 strong {
-  font-weight: 500; }
+  font-weight: 600; }
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -47,7 +47,7 @@ figure > img {
   display: block; }
 
 figcaption {
-  font-size: 10.5pt; }
+  font-size: 14.875px; }
 
 /**
  * Lists
@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500; }
 
 h1, h2, h3, h4, h5, h6, strong {
-  color: rgba(0, 0, 0, 0.85); }
+  color: rgba(0, 0, 0, 0.8); }
 
 /**
  * Links
@@ -165,7 +165,7 @@ pre {
   margin-bottom: 0;
   float: left; }
   .site-title, .site-title:visited {
-    color: rgba(0, 0, 0, 0.85); }
+    color: rgba(0, 0, 0, 0.8); }
 
 .site-nav {
   float: right;
@@ -173,7 +173,7 @@ pre {
   .site-nav .menu-icon {
     display: none; }
   .site-nav .page-link {
-    color: rgba(0, 0, 0, 0.85);
+    color: rgba(0, 0, 0, 0.8);
     line-height: 1.7; }
     .site-nav .page-link:not(:first-child) {
       margin-left: 20px; }
@@ -294,15 +294,15 @@ pre {
     .post-list > li p.post-intro {
       margin: 0; }
   .post-list a.post-link {
-    color: rgba(0, 0, 0, 0.85);
+    color: rgba(0, 0, 0, 0.8);
     margin: 0;
     padding: 0;
     font-weight: 600; }
   .post-list .post-meta {
     color: #a8a8a8;
-    font-size: 10.5pt; }
+    font-size: 14.875px; }
   .post-list .read-more {
-    font-size: 9.45pt;
+    font-size: 13.3875px;
     text-transform: uppercase;
     letter-spacing: 2px; }
 
@@ -321,7 +321,7 @@ pre {
   margin-bottom: 40px;
   color: #a8a8a8; }
   .post-header a {
-    color: rgba(0, 0, 0, 0.85); }
+    color: rgba(0, 0, 0, 0.8); }
   .post-header .post-meta a {
     color: #a8a8a8; }
 
@@ -330,8 +330,8 @@ pre {
   width: 100%; }
 
 .post-title {
-  color: rgba(0, 0, 0, 0.85);
-  font-weight: 700;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 600;
   font-size: 40px;
   letter-spacing: -1px;
   line-height: 1;
@@ -342,14 +342,14 @@ pre {
 
 .post-content {
   margin-bottom: 40px;
-  font-size: 12pt;
-  line-height: 1.87; }
+  line-height: 1.7; }
   .post-content h1, .post-content h2, .post-content h3, .post-content h4 {
     font-family: "Open Sans", Helvetica, Arial, sans-serif; }
   .post-content h1 {
+    letter-spacing: -1px;
     margin-top: 1em;
-    margin-bottom: 0px;
-    font-weight: 700;
+    margin-bottom: 0.2em;
+    font-weight: 600;
     font-size: 30px; }
   .post-content h2 {
     font-size: 28px; }
@@ -373,13 +373,13 @@ pre {
     margin: 30px -8% 30px -8%;
     max-width: 116%; }
   .post-content p.post-intro {
-    font-weight: 700;
+    font-size: 1.2em;
     padding-bottom: 2em;
     margin-bottom: 2em;
     border-bottom: 1px solid #e8e8e8; }
   .post-content .img-caption {
     text-align: center;
-    font-size: 10.5pt;
+    font-size: 14.875px;
     color: #a8a8a8;
     margin-bottom: 24px;
     margin-top: -20px; }
