@@ -6,8 +6,8 @@
 </description>
     <link>http://alphons.us/</link>
     <atom:link href="http://alphons.us/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 11 Dec 2015 19:46:29 +0800</pubDate>
-    <lastBuildDate>Fri, 11 Dec 2015 19:46:29 +0800</lastBuildDate>
+    <pubDate>Sat, 20 Feb 2016 00:26:25 +0800</pubDate>
+    <lastBuildDate>Sat, 20 Feb 2016 00:26:25 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -124,6 +124,93 @@ Time for another Ludum Dare game jam, where game devs over the world gather and 
         <pubDate>Wed, 09 Sep 2015 00:00:00 +0800</pubDate>
         <link>http://alphons.us/necromorph/</link>
         <guid isPermaLink="true">http://alphons.us/necromorph/</guid>
+        
+        
+        <category>gamedev</category>
+        
+        <category>ludumdare</category>
+        
+      </item>
+    
+      <item>
+        <title>LDJAM Bot tweets your games</title>
+        <description>&lt;p class=&quot;post-intro&quot;&gt;
+A few months back I was itching to try and make some cool stuff with Python for days. One day I had this idea for a Twitter bot that selects a random game from the &lt;a href=&quot;http://ludumdare.com/compo&quot;&gt;Ludum Dare&lt;/a&gt; website and tweets it along with the dev&#39;s username and the game&#39;s primary screenshot.
+&lt;/p&gt;
+
+&lt;p&gt;I used &lt;a href=&quot;http://www.crummy.com/software/BeautifulSoup/bs4/doc/&quot;&gt;BeautifulSoup&lt;/a&gt; to select a random game from the Ludum Dare website, pull the HTML and parse it to get the game title, developer username/Twitter handle and the game’s primary screenshot. I then tweet all those using &lt;a href=&quot;http://www.tweepy.org&quot;&gt;tweepy&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;how-it-works&quot;&gt;How it works&lt;/h1&gt;
+
+&lt;p&gt;&lt;em&gt;Disclaimer: This is probably a really dirty implementation, and I’m open for suggestions. If you have any, leave a comment below!&lt;/em&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select a random page number from &lt;a href=&quot;http://ludumdare.com/compo/ludum-dare-33/?action=preview&quot;&gt;this page&lt;/a&gt;. Say, page 5.
+ &lt;img src=&quot;/images/ldjambot/1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select a random game from the page in Step 1 and get the game’s entry page URL.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/images/ldjambot/2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;To make sure we don’t tweet the same game more than once, the bot checks a .txt file that contains the list of all game URL’s that were previously tweeted. If the URL in Step 2 already exists, we don’t want to tweet that again, so go back to Step 1. Else, append the URL to this list.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/images/ldjambot/3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;We have now selected the LD game to tweet. So now we get the game title and the dev’s username or his Twitter handle. Thankfully, most of this stuff is provided for in the Twitter meta tags so it’s easier to fetch them using bs4. The game’s first screenshot image is also downloaded using &lt;code&gt;urllib.request&lt;/code&gt;.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/images/ldjambot/meta.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The “Twitter username” field when editing your Ludum Dare profile is really vague – a lot of people type in “twitter.com/username”, or “http://twitter.com/username” when all you really need is just your plain username and it’s automatically prepended with a @. This means I have to clean it up a bit so it properly mentions the developer in the tweet.&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt; if &#39;http://twitter.com/&#39; in twitterHandle:
+     twitterUser = twitterHandle.replace(&quot;http://twitter.com/&quot;, &quot;&quot;)
+ elif &#39;https://twitter.com/&#39; in twitterHandle:
+     twitterUser = twitterHandle.replace(&quot;https://twitter.com/&quot;, &quot;&quot;)
+ elif &#39;http://www.twitter.com/&#39; in twitterHandle:
+     twitterUser = twitterHandle.replace(&quot;http://www.twitter.com/&quot;, &quot;&quot;)
+ elif &#39;https://www.twitter.com/&#39; in twitterHandle:
+     twitterUser = twitterHandle.replace(&quot;https://www.twitter.com/&quot;, &quot;&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Prepare the tweet, making sure it fits 140 characters by trimming the title and adding an ellipsis:&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt; tweet = title + &#39; by &#39; + author + &#39; - &#39; + url + &#39; #LDJAM #gamedev #indiedev&#39; 
+
+ if len(tweet) &amp;gt; 140:
+ charactersToTrim = len(tweet) - 137
+ title = title[:-charactersToTrim] + &#39;...&#39;
+ tweet = title + &#39; by &#39; + author + &#39; - &#39; + url + &#39; #LDJAM #gamedev #indiedev&#39; 
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Finally, tweet it! The tweepy library has a method to post a tweet with media.&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt; tweetStatus = api.update_with_media(&#39;img.jpg&#39;, tweet)
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;At this point I would simply run the python script every 30 minutes using CRON or a bash script. I also use &lt;a href=&quot;https://pypi.python.org/pypi/pync&quot;&gt;Notifier&lt;/a&gt; to ping me a native OS X notification so I would know when the bot actually tweets a game.&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt; Notifier.notify(title + &#39; by &#39; + author + &#39; &#39; + twitterHandle, contentImage=&#39;img.jpg&#39;, appIcon=&#39;pp.png&#39;, title=&#39;@LDJAMBot&#39;, open=&#39;http://twitter.com/ldjambot&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Overall it was a fun little Python experiment that turned into a Twitter account currently sitting at 400 followers!&lt;/p&gt;
+
+&lt;p&gt;LDJAM Bot has been running and tweeting Ludum Dare games since LD33. Check out it out in action &lt;a href=&quot;http://twitter.com/ldjambot&quot;&gt;here&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;– Alphonsus&lt;/p&gt;
+</description>
+        <pubDate>Wed, 09 Sep 2015 00:00:00 +0800</pubDate>
+        <link>http://alphons.us/ldjam/</link>
+        <guid isPermaLink="true">http://alphons.us/ldjam/</guid>
         
         
         <category>gamedev</category>
