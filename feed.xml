@@ -6,14 +6,14 @@
 </description>
     <link>http://alphons.us/</link>
     <atom:link href="http://alphons.us/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 20 Feb 2016 00:26:25 +0800</pubDate>
-    <lastBuildDate>Sat, 20 Feb 2016 00:26:25 +0800</lastBuildDate>
+    <pubDate>Tue, 15 Mar 2016 23:22:32 +0800</pubDate>
+    <lastBuildDate>Tue, 15 Mar 2016 23:22:32 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>Designing Levels for Necromorph</title>
         <description>&lt;p class=&quot;post-intro&quot;&gt;
-Last week I &lt;a href=&quot;#&quot;&gt;made a post about&lt;/a&gt; our latest Ludum Dare game, Necromorph. This time, as the lead level designer for this month&#39;s LD, I&#39;d like to talk more about our thought process while designing the levels for our short game.
+Last week I &lt;a href=&quot;#&quot;&gt;made a post about&lt;/a&gt; our latest Ludum Dare game, Necromorph. This time I&#39;d like to talk more about our thought process while designing the levels for our short game.
 &lt;/p&gt;
 
 &lt;p&gt;I was focusing on making the level design both challenging and satisfying in a not-frustrating kind of way. More importantly, I wanted it to be self-teaching. Although the game works like a usual platformer game where you can jump and kill enemies, the game has a few unusual mechanics which I don’t want to explicitly explain to the player. I wanted the level design itself to teach the player, and the player to learn by doing. Also, the game was too short anyway that pretty much the whole game is a tutorial, kind of like Portal.&lt;/p&gt;
