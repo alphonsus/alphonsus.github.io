@@ -5,6 +5,7 @@
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,300,300italic,400italic,600,600italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Noto+Serif:400,300,300italic,400italic,600,600italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,600,600italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Karla:400,300,300italic,400italic,600,600italic,700,700italic);
 /**
  * Reset some basic elements
  */
@@ -18,7 +19,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "Karla", "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 17px;
   line-height: 1.7;
   font-weight: 400;
@@ -70,7 +71,7 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat"; }
+  font-family: "Karla", "Montserrat"; }
 
 h1 {
   font-size: 40px;
@@ -83,10 +84,10 @@ h1, h2, h3, h4, h5, h6, strong {
  * Links
  */
 a {
-  color: #fa4b2a;
+  color: #dd4132;
   text-decoration: none; }
   a:visited {
-    color: #fa4b2a; }
+    color: #dd4132; }
   a:hover {
     text-decoration: underline; }
 
@@ -158,28 +159,33 @@ pre {
   .icon > svg path {
     fill: #828282; }
 
+.gray-text {
+  color: #a8a8a8; }
+
+.light-gray-text {
+  color: #e8e8e8; }
+
 /**
  * Site header
  */
 .site-header {
-  font-family: 'Montserrat';
-  border-bottom: 1px solid #e8e8e8;
-  text-transform: uppercase;
-  position: relative; }
+  font-family: "Karla", "Montserrat";
+  position: relative;
+  line-height: 70px; }
 
 .site-title {
   font-size: 20px;
-  line-height: 56px;
+  font-weight: 700;
   margin-bottom: 0;
   float: left; }
   .site-title, .site-title:visited {
     color: #222222; }
 
 .site-nav {
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0px;
   float: right;
-  line-height: 56px; }
+  line-height: 70px; }
   .site-nav .menu-icon {
     display: none; }
   .site-nav .page-link {
@@ -222,11 +228,12 @@ pre {
  */
 .site-footer {
   border-top: 1px solid #e8e8e8;
-  padding: 40px 0; }
+  padding: 40px 0;
+  font-weight: 300; }
 
 .footer-heading {
-  font-size: 18px;
-  margin-bottom: 20px; }
+  font-size: 16px;
+  margin-bottom: 1em; }
 
 .contact-list,
 .social-media-list {
@@ -234,8 +241,8 @@ pre {
   margin-left: 0; }
 
 .footer-col-wrapper {
-  font-size: 15px;
-  color: #828282;
+  font-size: 14px;
+  color: #a8a8a8;
   margin-left: -20px; }
 
 .footer-col {
@@ -274,6 +281,39 @@ pre {
  */
 .page-content {
   padding: 80px 0; }
+  .page-content #home {
+    text-align: center; }
+    .page-content #home h1 {
+      font-size: 48pt;
+      margin: 0px;
+      margin-top: 60px;
+      line-height: 1em; }
+    .page-content #home h2 {
+      margin: 0px;
+      margin-top: 10px;
+      margin-bottom: 50px;
+      font-weight: 300;
+      font-size: 14pt;
+      line-height: 1.2em; }
+    .page-content #home ul.links, .page-content #home ul.social-media {
+      color: #424242;
+      margin: 0;
+      font-size: 16pt;
+      margin-bottom: 50px; }
+      .page-content #home ul.links li, .page-content #home ul.social-media li {
+        margin: 0px 20px;
+        list-style: none;
+        display: inline; }
+        .page-content #home ul.links li a, .page-content #home ul.social-media li a {
+          color: #424242; }
+          .page-content #home ul.links li a:hover, .page-content #home ul.social-media li a:hover {
+            color: #dd4132; }
+  .page-content .profile-pic {
+    text-align: center; }
+    .page-content .profile-pic img {
+      width: 140px;
+      border-radius: 70px;
+      margin-bottom: 40px; }
   .page-content p {
     line-height: 1.7; }
   .page-content h1 {
@@ -309,6 +349,8 @@ pre {
     border-bottom: 1px solid #e8e8e8; }
     .post-list > li p.post-intro {
       margin: 0; }
+  .post-list > li:last-child {
+    border-bottom: none; }
   .post-list a.post-link {
     color: #222222;
     margin: 0;
