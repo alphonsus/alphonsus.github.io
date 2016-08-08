@@ -1,19 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Alphonsus</title>
-    <description>I am Alfonz Montelibano — I make video games and digital things with beautiful, minimalist design.</description>
-    <link>http://alphons.us/</link>
-    <atom:link href="http://alphons.us/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 18 Jun 2016 16:02:58 +0800</pubDate>
-    <lastBuildDate>Sat, 18 Jun 2016 16:02:58 +0800</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <title>alphonsus</title>
+    <description>Full-stack web developer; moonlights as a game developer at night.
+</description>
+    <link>alphonsus.github.io/</link>
+    <atom:link href="alphonsus.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 09 Aug 2016 00:06:22 +0800</pubDate>
+    <lastBuildDate>Tue, 09 Aug 2016 00:06:22 +0800</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Making A Programmer Notebook App #1</title>
+        <description>&lt;p&gt;Hello. Starting today I will be “devlogging” my process on making a programmer notebook app.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-problem&quot;&gt;The Problem&lt;/h3&gt;
+
+&lt;p&gt;I take down programming notes and cheat sheets a LOT on my Mac’s Notes app. It usually looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/prog-notebook/1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;While it usually gets the job done, look at that mess. It definitely just isn’t meant to be a “programming notebook.”&lt;/p&gt;
+
+&lt;p&gt;My issues with using Notes app as an app to take down programming notes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A not-monospace font. While we &lt;em&gt;can&lt;/em&gt; edit the font manually, it takes several keystrokes and clicks. And that’s &lt;em&gt;everytime&lt;/em&gt; we make a new note, since at the time of writing there is no way to set the default font. We need a monospace font right off the bat.&lt;/li&gt;
+  &lt;li&gt;No markdown support.&lt;/li&gt;
+  &lt;li&gt;Tags/categories feature. Yes we can organize notes into folders, and I do use that. But sometimes I also want notes to have multiple tags/categories, which I can then filter.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Things I do like about the Notes app are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Auto-saving. I don’t have to open notes from files, or save new notes into files, then open them again when I need to.&lt;/li&gt;
+  &lt;li&gt;It syncs across all my Apple devices.&lt;/li&gt;
+  &lt;li&gt;It’s just really easy and efficient to use in general. Just create a new note, type stuff in, use some hotkeys to change the format (e.g. Cmd+Shift+H to set to Heading), close the app, open it again, continue where you left off, etc. No need to click save buttons or type in the Note title and stuff.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;the-solution&quot;&gt;The Solution&lt;/h3&gt;
+
+&lt;p&gt;So that’s where this I’ll-be-making-a-programming-notebook-app thing comes in—an attempt to create a Notes-esque app but more programmer-centric. I’m envisioning it as a markdown editor but with all the nice features we love in Notes.app. And hey, this will be a perfect excuse for me to finally start learning Electron!&lt;/p&gt;
+
+&lt;h3 id=&quot;electron&quot;&gt;…Electron?&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/prog-notebook/2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://electron.atom.io&quot;&gt;Electron&lt;/a&gt; is a framework to create native applications using web technologies. Atom, Slack, Visual Code Studio, among others are all made with this framework. I’ve always wanted to try and make something with it ever since I heard about it earlier this year. I will be using it for this project given my familiarity with creating web apps as opposed to creating native macOS apps.&lt;/p&gt;
+
+&lt;p&gt;On my next post(s) I will talk about my current progress with the development and a mini-tutorial on how to get started with creating Electron apps. Here’s the project’s &lt;a href=&quot;https://github.com/AlfonzM/markdown-editor&quot;&gt;source code&lt;/a&gt;. Be warned, I am not the best modern-JS coder! And I will probably be porting this and use an actual JS framework like React in the future, depending on how large the project gets.&lt;/p&gt;
+
+&lt;p&gt;– Alphonsus&lt;/p&gt;
+</description>
+        <pubDate>Mon, 08 Aug 2016 00:00:00 +0800</pubDate>
+        <link>alphonsus.github.io/programmer-notebook/</link>
+        <guid isPermaLink="true">alphonsus.github.io/programmer-notebook/</guid>
+        
+        
+        <category>electron</category>
+        
+      </item>
     
       <item>
         <title>Designing Levels for Necromorph</title>
-        <description>&lt;p class=&quot;post-intro&quot;&gt;
-Last week I &lt;a href=&quot;#&quot;&gt;made a post about&lt;/a&gt; our latest Ludum Dare game, Necromorph. This time I&#39;d like to talk more about our thought process while designing the levels for our short game.
-&lt;/p&gt;
+        <description>&lt;p&gt;Last week I &lt;a href=&quot;#&quot;&gt;made a post about&lt;/a&gt; our latest Ludum Dare game, Necromorph. This time I’d like to talk more about our thought process while designing the levels for our short game.&lt;/p&gt;
 
 &lt;p&gt;I was focusing on making the level design both challenging and satisfying in a not-frustrating kind of way. More importantly, I wanted it to be self-teaching. Although the game works like a usual platformer game where you can jump and kill enemies, the game has a few unusual mechanics which I don’t want to explicitly explain to the player. I wanted the level design itself to teach the player, and the player to learn by doing. Also, the game was too short anyway that pretty much the whole game is a tutorial, kind of like Portal.&lt;/p&gt;
 
@@ -81,8 +131,8 @@ Last week I &lt;a href=&quot;#&quot;&gt;made a post about&lt;/a&gt; our latest L
 &lt;a href=&quot;http://ludumdare.com/compo/ludum-dare-33/?action=preview&amp;amp;uid=25961&quot;&gt;Ludum Dare Entry Page »&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 15 Sep 2015 00:00:00 +0800</pubDate>
-        <link>http://alphons.us/designing-levels-for-necromorph/</link>
-        <guid isPermaLink="true">http://alphons.us/designing-levels-for-necromorph/</guid>
+        <link>alphonsus.github.io/designing-levels-for-necromorph/</link>
+        <guid isPermaLink="true">alphonsus.github.io/designing-levels-for-necromorph/</guid>
         
         
         <category>gamedev</category>
@@ -93,9 +143,7 @@ Last week I &lt;a href=&quot;#&quot;&gt;made a post about&lt;/a&gt; our latest L
     
       <item>
         <title>Necromorph: Our Ludum Dare 33 Game</title>
-        <description>&lt;p class=&quot;post-intro&quot;&gt;
-Time for another Ludum Dare game jam, where game devs over the world gather and make a game over the weekend!
-&lt;/p&gt;
+        <description>&lt;p&gt;&lt;em&gt;Time for another&lt;/em&gt; Ludum Dare game jam, where game devs over the world gather and make a game over the weekend!&lt;/p&gt;
 
 &lt;p&gt;This month’s Ludum Dare 33 is our 6th time joining the online game development competition. The theme was “You are the monster,” and this is what Dave and I came up with over the 72-hour game jam.&lt;/p&gt;
 
@@ -121,8 +169,8 @@ Time for another Ludum Dare game jam, where game devs over the world gather and 
 &lt;a href=&quot;http://ludumdare.com/compo/ludum-dare-33/?action=preview&amp;amp;uid=25961&quot;&gt;Ludum Dare Entry Page »&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 09 Sep 2015 00:00:00 +0800</pubDate>
-        <link>http://alphons.us/necromorph/</link>
-        <guid isPermaLink="true">http://alphons.us/necromorph/</guid>
+        <link>alphonsus.github.io/necromorph/</link>
+        <guid isPermaLink="true">alphonsus.github.io/necromorph/</guid>
         
         
         <category>gamedev</category>
@@ -133,9 +181,7 @@ Time for another Ludum Dare game jam, where game devs over the world gather and 
     
       <item>
         <title>LDJAM Bot tweets your games</title>
-        <description>&lt;p class=&quot;post-intro&quot;&gt;
-A few months back I was itching to try and make some cool stuff with Python for days. One day I had this idea for a Twitter bot that selects a random game from the &lt;a href=&quot;http://ludumdare.com/compo&quot;&gt;Ludum Dare&lt;/a&gt; website and tweets it along with the dev&#39;s username and the game&#39;s primary screenshot.
-&lt;/p&gt;
+        <description>&lt;p&gt;A few months back I was itching to try and make some cool stuff with Python for days. One day I had this idea for a Twitter bot that selects a random game from the &lt;a href=&quot;http://ludumdare.com/compo&quot;&gt;Ludum Dare&lt;/a&gt; website and tweets it along with the dev’s username and the game’s primary screenshot.&lt;/p&gt;
 
 &lt;p&gt;I used &lt;a href=&quot;http://www.crummy.com/software/BeautifulSoup/bs4/doc/&quot;&gt;BeautifulSoup&lt;/a&gt; to select a random game from the Ludum Dare website, pull the HTML and parse it to get the game title, developer username/Twitter handle and the game’s primary screenshot. I then tweet all those using &lt;a href=&quot;http://www.tweepy.org&quot;&gt;tweepy&lt;/a&gt;.&lt;/p&gt;
 
@@ -159,14 +205,14 @@ A few months back I was itching to try and make some cool stuff with Python for 
     &lt;p&gt;&lt;img src=&quot;/images/ldjambot/3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;We have now selected the LD game to tweet. So now we get the game title and the dev’s username or his Twitter handle. Thankfully, most of this stuff is provided for in the Twitter meta tags so it’s easier to fetch them using bs4. The game’s first screenshot image is also downloaded using &lt;code&gt;urllib.request&lt;/code&gt;.&lt;/p&gt;
+    &lt;p&gt;We have now selected the LD game to tweet. So now we get the game title and the dev’s username or his Twitter handle. Thankfully, most of this stuff is provided for in the Twitter meta tags so it’s easier to fetch them using bs4. The game’s first screenshot image is also downloaded using &lt;code class=&quot;highlighter-rouge&quot;&gt;urllib.request&lt;/code&gt;.&lt;/p&gt;
 
     &lt;p&gt;&lt;img src=&quot;/images/ldjambot/meta.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;The “Twitter username” field when editing your Ludum Dare profile is really vague – a lot of people type in “twitter.com/username”, or “http://twitter.com/username” when all you really need is just your plain username and it’s automatically prepended with a @. This means I have to clean it up a bit so it properly mentions the developer in the tweet.&lt;/p&gt;
 
-    &lt;pre&gt;&lt;code&gt; if &#39;http://twitter.com/&#39; in twitterHandle:
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; if &#39;http://twitter.com/&#39; in twitterHandle:
      twitterUser = twitterHandle.replace(&quot;http://twitter.com/&quot;, &quot;&quot;)
  elif &#39;https://twitter.com/&#39; in twitterHandle:
      twitterUser = twitterHandle.replace(&quot;https://twitter.com/&quot;, &quot;&quot;)
@@ -175,29 +221,33 @@ A few months back I was itching to try and make some cool stuff with Python for 
  elif &#39;https://www.twitter.com/&#39; in twitterHandle:
      twitterUser = twitterHandle.replace(&quot;https://www.twitter.com/&quot;, &quot;&quot;)
 &lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Prepare the tweet, making sure it fits 140 characters by trimming the title and adding an ellipsis:&lt;/p&gt;
 
-    &lt;pre&gt;&lt;code&gt; tweet = title + &#39; by &#39; + author + &#39; - &#39; + url + &#39; #LDJAM #gamedev #indiedev&#39; 
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; tweet = title + &#39; by &#39; + author + &#39; - &#39; + url + &#39; #LDJAM #gamedev #indiedev&#39; 
 
  if len(tweet) &amp;gt; 140:
  charactersToTrim = len(tweet) - 137
  title = title[:-charactersToTrim] + &#39;...&#39;
  tweet = title + &#39; by &#39; + author + &#39; - &#39; + url + &#39; #LDJAM #gamedev #indiedev&#39; 
 &lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Finally, tweet it! The tweepy library has a method to post a tweet with media.&lt;/p&gt;
 
-    &lt;pre&gt;&lt;code&gt; tweetStatus = api.update_with_media(&#39;img.jpg&#39;, tweet)
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; tweetStatus = api.update_with_media(&#39;img.jpg&#39;, tweet)
 &lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;At this point I would simply run the python script every 30 minutes using CRON or a bash script. I also use &lt;a href=&quot;https://pypi.python.org/pypi/pync&quot;&gt;Notifier&lt;/a&gt; to ping me a native OS X notification so I would know when the bot actually tweets a game.&lt;/p&gt;
 
-    &lt;pre&gt;&lt;code&gt; Notifier.notify(title + &#39; by &#39; + author + &#39; &#39; + twitterHandle, contentImage=&#39;img.jpg&#39;, appIcon=&#39;pp.png&#39;, title=&#39;@LDJAMBot&#39;, open=&#39;http://twitter.com/ldjambot&#39;)
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; Notifier.notify(title + &#39; by &#39; + author + &#39; &#39; + twitterHandle, contentImage=&#39;img.jpg&#39;, appIcon=&#39;pp.png&#39;, title=&#39;@LDJAMBot&#39;, open=&#39;http://twitter.com/ldjambot&#39;)
 &lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
@@ -208,8 +258,8 @@ A few months back I was itching to try and make some cool stuff with Python for 
 &lt;p&gt;– Alphonsus&lt;/p&gt;
 </description>
         <pubDate>Wed, 09 Sep 2015 00:00:00 +0800</pubDate>
-        <link>http://alphons.us/ldjam/</link>
-        <guid isPermaLink="true">http://alphons.us/ldjam/</guid>
+        <link>alphonsus.github.io/ldjam-bot/</link>
+        <guid isPermaLink="true">alphonsus.github.io/ldjam-bot/</guid>
         
         
         <category>gamedev</category>
@@ -220,9 +270,7 @@ A few months back I was itching to try and make some cool stuff with Python for 
     
       <item>
         <title>Post-Mortem: Adrift</title>
-        <description>&lt;p class=&quot;post-intro&quot;&gt;
-LD31 is our 6th Ludum Dare. And after our failed attempt last August where both of us got sick on the last day (and later quit on the last few hours of the jam), we had one goal this LD: to make sure we finish the game this time.
-&lt;/p&gt;
+        <description>&lt;p&gt;LD31 is our 6th Ludum Dare. And after our failed attempt last August where both of us got sick on the last day (and later quit on the last few hours of the jam), we had one goal this LD: to make sure we finish the game this time.&lt;/p&gt;
 
 &lt;p&gt;And, long story short: finish a game we did!&lt;/p&gt;
 
@@ -263,8 +311,8 @@ Presenting &lt;a href=&quot;http://ludumdare.com/compo/ludum-dare-31/?action=pre
 &lt;p&gt;&lt;a href=&quot;http://ludumdare.com/compo/ludum-dare-31/?action=preview&amp;amp;uid=25961&quot;&gt;Ludum Dare Entry Page »&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 30 Dec 2014 00:00:00 +0800</pubDate>
-        <link>http://alphons.us/adrift-postmortem/</link>
-        <guid isPermaLink="true">http://alphons.us/adrift-postmortem/</guid>
+        <link>alphonsus.github.io/adrift-postmortem/</link>
+        <guid isPermaLink="true">alphonsus.github.io/adrift-postmortem/</guid>
         
         
         <category>gamedev</category>
