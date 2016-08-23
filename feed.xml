@@ -6,15 +6,177 @@
 </description>
     <link>alphonsus.github.io/</link>
     <atom:link href="alphonsus.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 10 Aug 2016 00:02:30 +0800</pubDate>
-    <lastBuildDate>Wed, 10 Aug 2016 00:02:30 +0800</lastBuildDate>
+    <pubDate>Tue, 23 Aug 2016 22:51:20 +0800</pubDate>
+    <lastBuildDate>Tue, 23 Aug 2016 22:51:20 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
-        <title>Making A Programmer Notebook App #1</title>
-        <description>&lt;p&gt;Hello. Starting today I will be devlogging my process on making a programmer notebook app for macOS.&lt;/p&gt;
+        <title>Programmer Notebook Log #2 – Creating a Markdown Editor in Electron</title>
+        <description>&lt;p&gt;This is the second entry of my devlog series in which I’m building a programmer-centric note-taking app for macOS. In this post I’ll talk about step #1, or, how to create a simple markdown editor in Electron.&lt;/p&gt;
 
-&lt;h3 id=&quot;problem-1&quot;&gt;Problem #1&lt;/h3&gt;
+&lt;h1 id=&quot;setting-up-electron&quot;&gt;Setting up Electron&lt;/h1&gt;
+
+&lt;p&gt;I used &lt;a href=&quot;https://github.com/sindresorhus/electron-boilerplate&quot;&gt;this boilerplate&lt;/a&gt; to get an Electron project up and running right away.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git clone https://github.com/szwacz/electron-boilerplate markdown-editor
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;markdown-editor
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;npm install &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; npm start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;There’s a lot of things included in the boilerplate, but there’s only three files that we really need for now.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-main-process--indexjs&quot;&gt;The Main Process – index.js&lt;/h4&gt;
+
+&lt;p&gt;When an Electron app is started, the process that is run first is called the &lt;strong&gt;main process&lt;/strong&gt;, specified in &lt;strong&gt;package.json&lt;/strong&gt;’s &lt;code class=&quot;highlighter-rouge&quot;&gt;main&lt;/code&gt; field. This is where we can create windows (&lt;code class=&quot;highlighter-rouge&quot;&gt;BrowserWindow&lt;/code&gt; instances), display a GUI and do all other OS-centric things.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-renderer-process--appappjs&quot;&gt;The Renderer Process – app/app.js&lt;/h4&gt;
+
+&lt;p&gt;The other process is called the &lt;strong&gt;renderer process&lt;/strong&gt;, which is where most of the application and GUI-related logic goes.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-gui--appapphtml&quot;&gt;The GUI – app/app.html&lt;/h4&gt;
+
+&lt;p&gt;And finally, since Electron uses web pages as its GUI, we need HTML templates.&lt;/p&gt;
+
+&lt;p&gt;What &lt;code class=&quot;highlighter-rouge&quot;&gt;npm start&lt;/code&gt; does is basically just run &lt;a href=&quot;(https://github.com/electron-userland/electron-prebuilt)&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;electron-prebuilt&lt;/code&gt;&lt;/a&gt;’s &lt;code class=&quot;highlighter-rouge&quot;&gt;electron .&lt;/code&gt; command to build and run the app.&lt;/p&gt;
+
+&lt;p&gt;The initial boilerplate looks like this right off the box.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/prog-notebook2/1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Perfect! Now we can start messing around with the template.&lt;/p&gt;
+
+&lt;h1 id=&quot;creating-the-ui&quot;&gt;Creating the UI&lt;/h1&gt;
+
+&lt;p&gt;For now what I’m aiming for is just a basic markdown editor window with two columns, the editor on the left and the Markdown-ed HTML output on the right.&lt;/p&gt;
+
+&lt;p&gt;The HTML that Electron renders as its GUI is in &lt;strong&gt;app/app.html&lt;/strong&gt;. Let’s add the two columns in our HTML template body.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;app.html:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;textarea&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;editor&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Hello World&lt;span class=&quot;nt&quot;&gt;&amp;lt;/textarea&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;output&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Hello World&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And add in the appropriate styles in &lt;strong&gt;main.less&lt;/strong&gt; until we get something like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/prog-notebook2/2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;img-caption&quot;&gt;That&#39;s a 100% height 50% width textarea and div with some paddings.&lt;/p&gt;
+
+&lt;p&gt;It’s pretty much done at this point. Now we just need to add the part where typing stuff in the textarea displays the Markdown output on the right div. Should be kids’ stuff with plain ‘ol jQuery.&lt;/p&gt;
+
+&lt;h1 id=&quot;markdown-editor&quot;&gt;Markdown Editor&lt;/h1&gt;
+
+&lt;p&gt;First, install the jQuery library:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ npm install jquery --save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then add the following to &lt;strong&gt;app/app.js&lt;/strong&gt;, which is where our GUI code should go.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// ... other imports&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;jquery&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Get references to #editor and #output&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$editor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;#editor&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;#output&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Removed some of the boilerplate code&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ready&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;// Whenever we type text in the textarea,&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;// display that text into the output div&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;$editor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;input propertychange&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+		&lt;span class=&quot;nx&quot;&gt;$output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now when we type stuff into the textarea, the output div should display that text as well.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/prog-notebook2/3.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And we now have a Markdown editor! …Almost. It’s rendering stuff out on the display div, but we need it to actually display Markdown formatted text.&lt;/p&gt;
+
+&lt;h1 id=&quot;actual-markdown-editing-part&quot;&gt;Actual Markdown Editing Part&lt;/h1&gt;
+
+&lt;p&gt;There’s a library called &lt;a href=&quot;https://www.npmjs.com/package/marked&quot;&gt;marked&lt;/a&gt; that converts strings into markdown HTML, i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;# hello&lt;/code&gt; into &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;h1&amp;gt;hello&amp;lt;/h1&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Install marked into our dependencies:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;npm install marked --save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Import the library in &lt;strong&gt;app.js&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import marked from &#39;marked&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then we simply pass the textarea value into a &lt;code class=&quot;highlighter-rouge&quot;&gt;marked()&lt;/code&gt; function, which returns the Markdown-ed HTML. Still in &lt;strong&gt;app.js&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$editor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;input propertychange&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;outputHtml&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;marked&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;$output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;outputHtml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And that’s it! Now when you try typing Markdown syntax into the editor it should display Markdown formatted text on the output window:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/prog-notebook2/4.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;img-caption&quot;&gt;It&#39;s an actual Markdown editor!&lt;/p&gt;
+
+&lt;h1 id=&quot;one-last-thing&quot;&gt;One last thing&lt;/h1&gt;
+
+&lt;p&gt;The Markdown-ed output looks ugly by its native vanilla HTML styles. Let’s fix that by using a Markdown stylesheet. I’m going with GitHub’s.&lt;/p&gt;
+
+&lt;p&gt;We include the stylesheet in &lt;strong&gt;main.less:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;(less)&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.4.0/github-markdown.css&quot;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;GitHub’s Markdown stylesheet is applied to &lt;code class=&quot;highlighter-rouge&quot;&gt;.markdown-body&lt;/code&gt;’s, so in &lt;strong&gt;app.html&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;output&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;markdown-body&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/prog-notebook2/5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And there you have it, a fully working GitHub-flavored Markdown editor. To build it to a native macOS application, simply run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run release&lt;/code&gt; and it should create DMG, zip and app files into a dist folder.&lt;/p&gt;
+
+&lt;p&gt;On my next posts I will be adding more features like creating new notes and auto-saving them to disk.&lt;/p&gt;
+
+&lt;p&gt;– Alphonsus&lt;/p&gt;
+</description>
+        <pubDate>Tue, 09 Aug 2016 00:00:00 +0800</pubDate>
+        <link>alphonsus.github.io/markdown-editor-in-electron/</link>
+        <guid isPermaLink="true">alphonsus.github.io/markdown-editor-in-electron/</guid>
+        
+        
+        <category>electron</category>
+        
+      </item>
+    
+      <item>
+        <title>Programmer Notebook Log #1 – Overview</title>
+        <description>&lt;p&gt;Hello, I’m devlogging my process on making a programmer notebook app for macOS using Electron.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-problem&quot;&gt;The Problem&lt;/h3&gt;
 
 &lt;p&gt;I take down programming notes and cheat sheets a LOT on my Mac’s Notes app. It usually looks like this:&lt;/p&gt;
 
@@ -43,7 +205,7 @@
   &lt;li&gt;Something else I haven’t heard of that might suit my needs, but it doesn’t really matter because…&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;problem-2&quot;&gt;Problem #2&lt;/h3&gt;
+&lt;h3 id=&quot;the-actual-problem&quot;&gt;The Actual Problem&lt;/h3&gt;
 
 &lt;p&gt;To be honest, I just really &lt;em&gt;really&lt;/em&gt; want to make something in Electron.&lt;/p&gt;
 
