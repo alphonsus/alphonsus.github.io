@@ -6,8 +6,8 @@
 </description>
     <link>alphonsus.github.io/</link>
     <atom:link href="alphonsus.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 24 Aug 2016 00:26:05 +0800</pubDate>
-    <lastBuildDate>Wed, 24 Aug 2016 00:26:05 +0800</lastBuildDate>
+    <pubDate>Sat, 17 Sep 2016 00:33:52 +0800</pubDate>
+    <lastBuildDate>Sat, 17 Sep 2016 00:33:52 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -113,10 +113,22 @@
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;This past week I’ve finished most of the important functionalities and it’s actually pretty usable at this stage. From here on out, I’ll be focusing more on the design and UX for the app.&lt;/p&gt;
+
+&lt;p&gt;— Alphonsus&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Programmer Notebook Log Series:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/programmer-notebook&quot;&gt;Programmer Notebook Log #1 – Overview&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/markdown-editor-in-electron&quot;&gt;Programmer Notebook Log #2 – Creating a Markdown Editor in Electron&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Programmer Notebook Log #3 – Adding Core Functionality&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Tue, 23 Aug 2016 00:00:00 +0800</pubDate>
-        <link>alphonsus.github.io/programming-notebook-update/</link>
-        <guid isPermaLink="true">alphonsus.github.io/programming-notebook-update/</guid>
+        <link>alphonsus.github.io/programming-notebook-core-functionality/</link>
+        <guid isPermaLink="true">alphonsus.github.io/programming-notebook-core-functionality/</guid>
         
         
         <category>electron</category>
@@ -274,7 +286,15 @@
 
 &lt;p&gt;On my next posts I will be adding more features like creating new notes and auto-saving them to disk.&lt;/p&gt;
 
-&lt;p&gt;– Alphonsus&lt;/p&gt;
+&lt;p&gt;— Alphonsus&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/programmer-notebook&quot;&gt;Programmer Notebook Log #1 – Overview&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Programmer Notebook Log #2 – Creating a Markdown Editor in Electron&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/programming-notebook-core-functionality&quot;&gt;Programmer Notebook Log #3 – Adding Core Functionality&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Mon, 15 Aug 2016 00:00:00 +0800</pubDate>
         <link>alphonsus.github.io/markdown-editor-in-electron/</link>
@@ -334,7 +354,17 @@
 
 &lt;p&gt;On my next post(s) I will talk about my current progress with the development and a mini-tutorial on how to get started with creating Electron apps. You can find the source code &lt;a href=&quot;https://github.com/AlfonzM/md-editor&quot;&gt;in this GitHub repository&lt;/a&gt;. Be warned, I am not the best modern-JS coder! And I will probably be porting this and use an actual JS framework like React in the future, depending on how large the project gets.&lt;/p&gt;
 
-&lt;p&gt;– Alphonsus&lt;/p&gt;
+&lt;p&gt;— Alphonsus&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Programmer Notebook Log Series:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Programmer Notebook Log #1 – Overview&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/markdown-editor-in-electron&quot;&gt;Programmer Notebook Log #2 – Creating a Markdown Editor in Electron&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/programming-notebook-core-functionality&quot;&gt;Programmer Notebook Log #3 – Adding Core Functionality&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Mon, 08 Aug 2016 00:00:00 +0800</pubDate>
         <link>alphonsus.github.io/programmer-notebook/</link>
@@ -408,6 +438,8 @@
 
 &lt;p&gt;&lt;em&gt;To be continued…&lt;/em&gt;&lt;/p&gt;
 
+&lt;p&gt;— Alphonsus&lt;/p&gt;
+
 &lt;!-- To utilize the new flying mechanic, I made the next  --&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://supernaught.itch.io/necromorph&quot;&gt;Play Necromorph on itch.io »&lt;/a&gt;
@@ -445,6 +477,8 @@
 &lt;p&gt;There’s a total of 3 levels, the first being a tutorial level inspired by genius tutorial levels in games like Super Mario Bros. and Cave Story.&lt;/p&gt;
 
 &lt;p&gt;I shall be making a post-mortem blog post where I will talk more about our thought process on designing the levels, as well as how the game fared on the game jam, so stay tuned! Meanwhile, go play Necromorph!&lt;/p&gt;
+
+&lt;p&gt;— Alphonsus&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;UPDATE: Level design post is &lt;a href=&quot;/designing-levels-for-necromorph&quot;&gt;here&lt;/a&gt;!&lt;/em&gt;&lt;/p&gt;
 
@@ -539,7 +573,7 @@
 
 &lt;p&gt;LDJAM Bot has been running and tweeting Ludum Dare games since LD33. Check out it out in action &lt;a href=&quot;http://twitter.com/ldjambot&quot;&gt;here&lt;/a&gt;!&lt;/p&gt;
 
-&lt;p&gt;– Alphonsus&lt;/p&gt;
+&lt;p&gt;— Alphonsus&lt;/p&gt;
 </description>
         <pubDate>Wed, 09 Sep 2015 00:00:00 +0800</pubDate>
         <link>alphonsus.github.io/ldjam-bot/</link>
@@ -590,7 +624,7 @@ Presenting &lt;a href=&quot;http://ludumdare.com/compo/ludum-dare-31/?action=pre
 
 &lt;p&gt;If you reached this point, thank you for reading and we hope you enjoy Adrift! See you next Ludum Dare!&lt;/p&gt;
 
-&lt;p&gt;– Alphonsus&lt;/p&gt;
+&lt;p&gt;— Alphonsus&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://ludumdare.com/compo/ludum-dare-31/?action=preview&amp;amp;uid=25961&quot;&gt;Ludum Dare Entry Page »&lt;/a&gt;&lt;/p&gt;
 </description>
