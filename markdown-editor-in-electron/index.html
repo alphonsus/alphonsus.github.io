@@ -122,10 +122,10 @@
 <p><strong>app.html:</strong></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;textarea</span> <span class="na">id=</span><span class="s">"editor"</span><span class="nt">&gt;</span>Hello World<span class="nt">&lt;/textarea&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"output"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;h1&gt;</span>Hello World<span class="nt">&lt;/h1&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;textarea</span> <span class="na">id=</span><span class="s">"editor"</span><span class="nt">&gt;</span>Hello World<span class="nt">&lt;/textarea&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"output"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Hello World<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </code></pre>
 </div>
@@ -158,11 +158,11 @@
 <span class="c1">// Removed some of the boilerplate code</span>
 
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-	<span class="c1">// Whenever we type text in the textarea,</span>
-	<span class="c1">// display that text into the output div</span>
-	<span class="nx">$editor</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'input propertychange'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-		<span class="nx">$output</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
-	<span class="p">});</span>
+  <span class="c1">// Whenever we type text in the textarea,</span>
+  <span class="c1">// display that text into the output div</span>
+  <span class="nx">$editor</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'input propertychange'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">$output</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
+  <span class="p">});</span>
 <span class="p">});</span>
 </code></pre>
 </div>
@@ -192,8 +192,8 @@
 <p>Then we simply pass the textarea value into a <code class="highlighter-rouge">marked()</code> function, which returns the Markdown-ed HTML. Still in <strong>app.js</strong>:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">$editor</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'input propertychange'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-	<span class="kd">var</span> <span class="nx">outputHtml</span> <span class="o">=</span> <span class="nx">marked</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
-	<span class="nx">$output</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">outputHtml</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">outputHtml</span> <span class="o">=</span> <span class="nx">marked</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
+  <span class="nx">$output</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">outputHtml</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre>
 </div>

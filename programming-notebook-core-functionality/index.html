@@ -66,20 +66,17 @@
 </header>
 
 
-    
     <div class="page-content">
       <div class="wrapper">
-        <br>
-        <div class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-          <header class="post-header">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Programmer Notebook Log #3 – Adding Core Functionality</h1>
+    <p class="post-meta"><time datetime="2016-08-23T00:00:00+08:00" itemprop="datePublished">Aug 23, 2016</time></p>
+  </header>
 
-            <h1 class="post-title">Programmer Notebook Log #3 – Adding Core Functionality</h1>
-            <a class="post-meta" href="/programming-notebook-core-functionality/">August 23, 2016</a>
-          </header>
-
-          <article class="post-content">
-            <p>This is the third of a devlog series in which I’m building a note-taking app for programmers. Last week’s progress was making a simple markdown editor in Electron. This past week I’ve added most of the core note-taking functionalities.</p>
+  <div class="post-content" itemprop="articleBody">
+    <p>This is the third of a devlog series in which I’m building a note-taking app for programmers. Last week’s progress was making a simple markdown editor in Electron. This past week I’ve added most of the core note-taking functionalities.</p>
 
 <ul>
   <li>create a note</li>
@@ -124,9 +121,9 @@
 <span class="kd">var</span> <span class="nx">notes</span> <span class="o">=</span> <span class="nx">db</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'notes'</span><span class="p">).</span><span class="nx">value</span><span class="p">()</span>
 
 <span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">note</span><span class="p">){</span>
-    <span class="c1">// Do something with note...</span>
-    <span class="c1">// console.log(note.body)</span>
-    <span class="c1">// console.log(note.updated_at)</span>
+  <span class="c1">// Do something with note...</span>
+  <span class="c1">// console.log(note.body)</span>
+  <span class="c1">// console.log(note.updated_at)</span>
 <span class="p">});</span>
 </code></pre>
 </div>
@@ -140,7 +137,7 @@
 <p><strong>HTML template (index.html)</strong></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"editor"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;pre</span> <span class="na">id=</span><span class="s">"editor-textarea"</span><span class="nt">&gt;&lt;/pre&gt;</span>
+  <span class="nt">&lt;pre</span> <span class="na">id=</span><span class="s">"editor-textarea"</span><span class="nt">&gt;&lt;/pre&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </code></pre>
 </div>
@@ -153,14 +150,14 @@
 <span class="nx">editor</span><span class="p">.</span><span class="nx">setTheme</span><span class="p">(</span><span class="s2">"ace/theme/github"</span><span class="p">);</span>
 <span class="nx">editor</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">setMode</span><span class="p">(</span><span class="s2">"ace/mode/markdown"</span><span class="p">);</span>
 <span class="nx">editor</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span>
-	<span class="na">showGutter</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-	<span class="na">fontFamily</span><span class="p">:</span> <span class="s1">'Menlo'</span><span class="p">,</span>
-	<span class="na">showLineNumbers</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-	<span class="na">fontSize</span><span class="p">:</span> <span class="s1">'9pt'</span><span class="p">,</span>
-	<span class="na">wrap</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-	<span class="na">cursorStyle</span><span class="p">:</span> <span class="s1">'slim smooth'</span><span class="p">,</span>
-	<span class="na">showPrintMargin</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-	<span class="na">highlightActiveLine</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="na">showGutter</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">fontFamily</span><span class="p">:</span> <span class="s1">'Menlo'</span><span class="p">,</span>
+  <span class="na">showLineNumbers</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">fontSize</span><span class="p">:</span> <span class="s1">'9pt'</span><span class="p">,</span>
+  <span class="na">wrap</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">cursorStyle</span><span class="p">:</span> <span class="s1">'slim smooth'</span><span class="p">,</span>
+  <span class="na">showPrintMargin</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">highlightActiveLine</span><span class="p">:</span> <span class="kc">false</span>
 <span class="p">});</span>
 
 <span class="nx">editor</span><span class="p">.</span><span class="nx">container</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">lineHeight</span> <span class="o">=</span> <span class="mf">1.4</span><span class="p">;</span>
@@ -193,29 +190,14 @@
   <li><a href="">Programmer Notebook Log #3 – Adding Core Functionality</a></li>
 </ul>
 
-          </article>
+  </div>
 
-        </div>
+</article>
 
-        
-          <div id="disqus_thread"></div>
-          <script type="text/javascript">
-              /* * * CONFIGURATION VARIABLES * * */
-              var disqus_shortname = 'alphonsus';
-              
-              /* * * DON'T EDIT BELOW THIS LINE * * */
-              (function() {
-                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-              })();
-          </script>
-          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-          
-              </div>
+      </div>
+    </div>
 
-          </div>
-        <footer class="site-footer">
+    <footer class="site-footer">
   <div class="wrapper">
 
     <h2 class="footer-heading">alphonsus</h2>
