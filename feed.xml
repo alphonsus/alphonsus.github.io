@@ -6,8 +6,8 @@
 </description>
     <link>alphonsus.github.io/</link>
     <atom:link href="alphonsus.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 03 Nov 2016 23:55:02 +0800</pubDate>
-    <lastBuildDate>Thu, 03 Nov 2016 23:55:02 +0800</lastBuildDate>
+    <pubDate>Fri, 04 Nov 2016 00:15:10 +0800</pubDate>
+    <lastBuildDate>Fri, 04 Nov 2016 00:15:10 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -85,11 +85,17 @@
 &lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+I&lt;/code&gt; will automatically indent your code.
 &lt;code class=&quot;highlighter-rouge&quot;&gt;Alt+Shift+R&lt;/code&gt; to reveal the current file’s location in the sidebar. Useful for when you need to see files in the same directory.&lt;/p&gt;
 
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;The way I did it was I’d familiarize one shortcut at a time until they gradually become second nature, e.g. for this week I’d get used to multiple lines selection, next week would be cursor movement shortcuts, etc. Remember to keep discovering new shortcuts by looking at your editor’s menu bar items!&lt;/p&gt;
+
+&lt;p&gt;Happy coding!&lt;/p&gt;
+
 &lt;p&gt;— Alphonsus&lt;/p&gt;
 </description>
         <pubDate>Fri, 28 Oct 2016 00:00:00 +0800</pubDate>
-        <link>alphonsus.github.io/coding-ninja/</link>
-        <guid isPermaLink="true">alphonsus.github.io/coding-ninja/</guid>
+        <link>alphonsus.github.io/coding-like-a-ninja/</link>
+        <guid isPermaLink="true">alphonsus.github.io/coding-like-a-ninja/</guid>
         
         
         <category>coding</category>
