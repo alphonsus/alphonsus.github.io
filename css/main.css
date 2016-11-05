@@ -38,7 +38,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 18px/1.75 Avenir, -apple-system, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 400 18px/1.75 Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
   background-color: #ffffff;
   -webkit-text-size-adjust: 100%;
@@ -123,14 +123,14 @@ pre,
 code {
   font-size: 14px;
   border-radius: 5px;
-  background-color: #eee;
+  background-color: #f2f2f2;
   font-family: Menlo; }
 
 code {
-  padding: 4px 6px; }
+  padding: 6px 8px; }
 
 pre {
-  padding: 8px 12px;
+  padding: 10px 12px;
   overflow-x: auto; }
   pre > code {
     border: 0;
@@ -181,9 +181,8 @@ pre {
   position: relative; }
 
 .site-title {
-  font-size: 17px;
+  font-size: 20px;
   text-transform: uppercase;
-  letter-spacing: 2px;
   font-weight: 700;
   line-height: 64px;
   margin-bottom: 0;
@@ -260,7 +259,6 @@ pre {
 
 .footer-col {
   float: left;
-  margin-bottom: 15px;
   padding-left: 15px; }
 
 .footer-col-1 {
@@ -321,27 +319,20 @@ pre {
   .post-list p {
     margin-bottom: 0; }
   .post-list a.read-more {
-    color: tomato;
-    font-size: 13.5px;
-    letter-spacing: 2px;
-    font-weight: 500;
-    text-transform: uppercase; }
+    color: tomato; }
   .post-list > li:not(:last-child) {
     margin-bottom: 36px;
     padding-bottom: 36px;
     border-bottom: 1px solid #eee; }
 
 .post-meta {
-  font-size: 15.75px;
-  color: #828282;
-  letter-spacing: 2px;
-  text-transform: uppercase; }
+  color: #b5b5b5; }
 
 .post-link {
   line-height: 1.4em;
   color: #333;
   display: block;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 700; }
 
 /**
@@ -349,6 +340,22 @@ pre {
  */
 .post-header {
   margin-bottom: 30px; }
+
+.post-categories ul {
+  margin: 40px 0;
+  padding: 0; }
+  .post-categories ul li {
+    list-style: none;
+    display: inline; }
+    .post-categories ul li a {
+      color: #828282;
+      margin-right: 10px;
+      padding: 7px 12px;
+      border-radius: 5px;
+      background-color: #f4f4f4; }
+      .post-categories ul li a:hover {
+        text-decoration: none;
+        background-color: #ececec; }
 
 .post-cover-image {
   margin: 0;
@@ -405,6 +412,47 @@ pre {
     color: #828282;
     margin-bottom: 24px;
     margin-top: -15px; }
+
+#index {
+  position: relative;
+  height: 100vh;
+  width: 100%; }
+  #index main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1000px; }
+    #index main h1 {
+      font-size: 36pt;
+      font-weight: 700;
+      line-height: 1.3em;
+      margin: 0;
+      padding: 0 50px; }
+    #index main ul {
+      color: #9c9c9c;
+      font-size: 20pt;
+      margin: 0;
+      margin-top: 0.5em;
+      padding: 0 50px; }
+      #index main ul li {
+        display: inline;
+        list-style: none;
+        margin: 0px;
+        margin-right: 50px; }
+    @media (max-width: 480px) {
+      #index main h1 {
+        text-align: left;
+        font-size: 20pt;
+        padding: 0 30px; }
+      #index main ul {
+        text-align: left;
+        font-size: 11pt;
+        padding: 0 30px; }
+        #index main ul li {
+          margin: 0;
+          margin-right: 10px; } }
 
 pre.highlight code {
   line-height: 1.5em; }

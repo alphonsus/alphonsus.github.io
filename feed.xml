@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>alphonsus</title>
-    <description>Full-stack web developer; moonlights as a game developer at night.
+    <title>Alphonsus</title>
+    <description>Full-stack web developer by day, indie game developer by night.
 </description>
     <link>alphonsus.github.io/</link>
     <atom:link href="alphonsus.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 04 Nov 2016 00:15:10 +0800</pubDate>
-    <lastBuildDate>Fri, 04 Nov 2016 00:15:10 +0800</lastBuildDate>
+    <pubDate>Sat, 05 Nov 2016 22:08:29 +0800</pubDate>
+    <lastBuildDate>Sat, 05 Nov 2016 22:08:29 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -98,7 +98,7 @@
         <guid isPermaLink="true">alphonsus.github.io/coding-like-a-ninja/</guid>
         
         
-        <category>coding</category>
+        <category>dev</category>
         
       </item>
     
@@ -222,6 +222,8 @@
         <link>alphonsus.github.io/programming-notebook-core-functionality/</link>
         <guid isPermaLink="true">alphonsus.github.io/programming-notebook-core-functionality/</guid>
         
+        
+        <category>webdev</category>
         
         <category>electron</category>
         
@@ -393,6 +395,8 @@
         <guid isPermaLink="true">alphonsus.github.io/markdown-editor-in-electron/</guid>
         
         
+        <category>webdev</category>
+        
         <category>electron</category>
         
       </item>
@@ -462,6 +466,8 @@
         <link>alphonsus.github.io/programmer-notebook/</link>
         <guid isPermaLink="true">alphonsus.github.io/programmer-notebook/</guid>
         
+        
+        <category>webdev</category>
         
         <category>electron</category>
         
@@ -551,7 +557,7 @@
     
       <item>
         <title>Necromorph: Our Ludum Dare 33 Game</title>
-        <description>&lt;p&gt;&lt;em&gt;Time for another&lt;/em&gt; Ludum Dare game jam, where game devs over the world gather and make a game over the weekend!&lt;/p&gt;
+        <description>&lt;p&gt;Time for another Ludum Dare game jam, where game devs over the world gather and make a game over the weekend!&lt;/p&gt;
 
 &lt;p&gt;This month’s Ludum Dare 33 is our 6th time joining the online game development competition. The theme was “You are the monster,” and this is what Dave and I came up with over the 72-hour game jam.&lt;/p&gt;
 
