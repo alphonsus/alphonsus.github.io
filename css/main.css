@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i");
 @font-face {
   font-family: Avenir;
   font-weight: 500;
@@ -38,7 +39,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 18px/1.75 Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 400 18px/1.75 "Karla", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
   background-color: #ffffff;
   -webkit-text-size-adjust: 100%;
@@ -101,7 +102,7 @@ a {
   color: #333;
   text-decoration: none; }
   a:hover {
-    text-decoration: underline; }
+    border-bottom: 2px solid; }
 
 /**
  * Blockquotes
@@ -121,16 +122,16 @@ blockquote {
  */
 pre,
 code {
-  font-size: 14px;
+  font-size: 13px;
   border-radius: 5px;
   background-color: #f2f2f2;
-  font-family: Menlo; }
+  font-family: Menlo, monospace; }
 
 code {
   padding: 6px 8px; }
 
 pre {
-  padding: 10px 12px;
+  padding: 20px 20px;
   overflow-x: auto; }
   pre > code {
     border: 0;
@@ -141,23 +142,23 @@ pre {
  * Wrapper
  */
 .wrapper {
-  max-width: -webkit-calc(800px - (30px * 2));
-  max-width: calc(800px - (30px * 2));
+  max-width: -webkit-calc(700px - (30px * 2));
+  max-width: calc(700px - (30px * 2));
   margin-right: auto;
   margin-left: auto;
-  padding-right: 30px;
-  padding-left: 30px; }
+  padding-right: 15px;
+  padding-left: 15px; }
   @media screen and (max-width: 800px) {
     .wrapper {
-      max-width: -webkit-calc(800px - (30px));
-      max-width: calc(800px - (30px));
-      padding-right: 15px;
-      padding-left: 15px; } }
+      max-width: -webkit-calc(700px - (30px));
+      max-width: calc(700px - (30px));
+      padding-right: 30px;
+      padding-left: 30px; } }
 
 /**
  * Clearfix
  */
-.wrapper:after, .footer-col-wrapper:after {
+.wrapper:after {
   content: "";
   display: table;
   clear: both; }
@@ -178,20 +179,22 @@ pre {
  */
 .site-header {
   min-height: 64px;
-  position: relative; }
+  position: relative;
+  margin-top: 40px; }
 
 .site-title {
-  font-size: 20px;
-  text-transform: uppercase;
-  font-weight: 700;
-  line-height: 64px;
+  font-size: 30px;
+  text-transform: lowercase;
   margin-bottom: 0;
   float: left; }
+  .site-title:hover {
+    border: none; }
 
 .site-nav {
   float: right;
   line-height: 64px;
-  font-size: 16px;
+  font-size: 18px;
+  text-transform: lowercase;
   font-weight: 500; }
   .site-nav .menu-icon {
     display: none; }
@@ -239,9 +242,7 @@ pre {
  * Site footer
  */
 .site-footer {
-  margin-top: 30px;
-  border-top: 1px solid #e8e8e8;
-  padding: 30px 0; }
+  padding-bottom: 30px; }
 
 .footer-heading {
   font-size: 18px;
@@ -253,9 +254,9 @@ pre {
   margin-left: 0; }
 
 .footer-col-wrapper {
-  font-size: 15px;
-  color: #828282;
-  margin-left: -15px; }
+  font-size: 13px;
+  font-weight: 300;
+  color: #b5b5b5; }
 
 .footer-col {
   float: left;
@@ -291,12 +292,13 @@ pre {
  * Page content
  */
 .page-content {
-  padding: 90px 0; }
-  .page-content .profile-pic img {
-    text-align: left;
-    width: 250px;
-    margin: 0;
-    margin-bottom: 40px; }
+  padding: 60px 0; }
+  .page-content .profile-pic {
+    text-align: center; }
+    .page-content .profile-pic img {
+      width: 220px;
+      margin: 0;
+      margin-bottom: 40px; }
   .page-content #home ul.social-media {
     text-align: center;
     font-size: 16pt;
@@ -308,7 +310,8 @@ pre {
       .page-content #home ul.social-media li a {
         color: #424242; }
         .page-content #home ul.social-media li a:hover {
-          color: tomato; }
+          color: tomato;
+          border: none; }
 
 .page-heading {
   font-size: 20px; }
@@ -320,20 +323,15 @@ pre {
     margin-bottom: 0; }
   .post-list a.read-more {
     color: tomato; }
-  .post-list > li:not(:last-child) {
-    margin-bottom: 36px;
-    padding-bottom: 36px;
-    border-bottom: 1px solid #eee; }
 
 .post-meta {
+  flex: 0 0 130px;
   color: #b5b5b5; }
 
 .post-link {
-  line-height: 1.4em;
-  color: #333;
-  display: block;
-  font-size: 34px;
-  font-weight: 700; }
+  flex-grow: 1;
+  line-height: 1em;
+  color: #333; }
 
 /**
  * Posts
