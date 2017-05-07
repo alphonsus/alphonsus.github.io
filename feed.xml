@@ -6,9 +6,197 @@
 </description>
     <link>alphonsus.github.io/</link>
     <atom:link href="alphonsus.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 12 Apr 2017 19:20:06 +0800</pubDate>
-    <lastBuildDate>Wed, 12 Apr 2017 19:20:06 +0800</lastBuildDate>
+    <pubDate>Sun, 07 May 2017 16:57:15 +0800</pubDate>
+    <lastBuildDate>Sun, 07 May 2017 16:57:15 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Command Line Fu or: How I Learned to Stop Worrying and Love the Terminal</title>
+        <description>&lt;p&gt;A few years back when then-15-year-old me just started learning software development I always hear about this “terminal,” along with its other counterparts—bash, command line, CLI, the command prompt—and how it’s so useful and how it makes a developer’s life easier.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;img src=&quot;/images/commandlinefu/hughjackman.jpg&quot; alt=&quot;&quot; /&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p class=&quot;img-caption&quot;&gt;Hugh Jackman in Swordfish—best hacking scene in a movie ever&lt;/p&gt;
+
+&lt;p&gt;Since then I’ve always been intrigued and wanted to learn how to use and master it, but a few “Beginner Terminal Usage” tutorials later, I just can’t get to appreciate how a couple &lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt;’s and &lt;code class=&quot;highlighter-rouge&quot;&gt;pwd&lt;/code&gt;’s and &lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt;’s would help me aside from looking cool (like a hacker in the movies). I mean isn’t that what Finder/Windows Explorer is for?&lt;/p&gt;
+
+&lt;p&gt;Fast forward a few years of professional software development experience later, terminal usage has become second nature to me (and should to you too!) and it definitely &lt;em&gt;does&lt;/em&gt; make one’s life easier—and not just for programming!&lt;/p&gt;
+
+&lt;p&gt;This blog post is a love letter to “Past Me” who always wanted to be a command line fu master but just didn’t have any idea where to go next after the &lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;pwd&lt;/code&gt; tutorials—an answer to a question he’s always asking: what real-life applications can I actually do with the terminal?&lt;/p&gt;
+
+&lt;h3 id=&quot;version-control-git&quot;&gt;Version Control (Git)&lt;/h3&gt;
+
+&lt;p&gt;Remember that time when you make changes to your source code but want to save a copy of the older file just incase you want to revert back to that version? Of course you do, you posted this on Facebook during college while working on a school project:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;img src=&quot;/images/commandlinefu/files.jpg&quot; alt=&quot;&quot; /&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p class=&quot;img-caption&quot;&gt;PROJECT, PROJECT - Copy, PROJECT - Copy (2), project_new, project_new2, project_newest, projecttest, LATEST, LATEST - Copy, LATEST - Copy (2), PROJECT_hardcopypass, PROJECTOFDOOM, projectofawesome, finalproject, backup of final, superfinalproject&lt;/p&gt;
+
+&lt;p&gt;Enter version control (a.k.a. source control), with &lt;a href=&quot;http://github.com/&quot;&gt;Git&lt;/a&gt; being the most popular one. It solves that problem—you make “savepoints” of your code called &lt;em&gt;commits&lt;/em&gt; and you can revert to them anytime. You usually then push your commits to a version control repository host like &lt;a href=&quot;http://github.com/&quot;&gt;GitHub&lt;/a&gt; or &lt;a href=&quot;http://gitlab.com/&quot;&gt;GitLab&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;ssh&quot;&gt;SSH&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;img src=&quot;/images/commandlinefu/im_an_idiot.png&quot; alt=&quot;&quot; /&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p class=&quot;img-caption&quot;&gt; Relevant XKCD. &lt;/p&gt;
+
+&lt;p&gt;SSH (Secure Socket Shell) is a way to access a remote computer through the terminal. Think of it as using the terminal of another computer, from your computer—how cool is that!&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ssh remote_username@remote_host
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For example, you can use SSH to deploy your website to a server—you SSH into your Unix/Linux server, install and setup a &lt;a href=&quot;https://en.wikipedia.org/wiki/LAMP_(software_bundle)&quot;&gt;LAMP stack&lt;/a&gt;, then clone the Git repository of your website’s source code into your server’s public HTML directory. From then on, you just do a &lt;code class=&quot;highlighter-rouge&quot;&gt;git pull&lt;/code&gt; from your server everytime you push updates to your code—no need for those clunky time-wasting FTP GUI applications!&lt;/p&gt;
+
+&lt;h3 id=&quot;edit-textsource-code-files&quot;&gt;Edit text/source code files&lt;/h3&gt;
+
+&lt;p&gt;When you edit files in your local computer you’d definitely use a text editor, right? What if you need to edit files from a remote server via SSH like config files for instance? Well there’s Vi/Vim for that, a text editor for the command line.&lt;/p&gt;
+
+&lt;p&gt;It’s got a lot of powerful features and keybindings, and the learning curve is pretty steep, but it’s all worth it and just takes a bit of practice and habit before you actually master it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/commandlinefu/vim.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;img-caption&quot;&gt;Source: vimgifs.com&lt;/p&gt;
+
+&lt;p&gt;P.S. Other alternatives include nano and emacs, but you’ll probably want to just stick with Vim for now, trust me. And you don’t want to get into those vim vs. emacs wars, too!&lt;/p&gt;
+
+&lt;h3 id=&quot;install-utilities-with-a-package-manager&quot;&gt;Install utilities with a package manager&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://brew.sh/&quot;&gt;Homebrew&lt;/a&gt; is a package manager for macOS, equivalent to Linux’s &lt;code class=&quot;highlighter-rouge&quot;&gt;apt&lt;/code&gt;. Basically, like what it says on their website, it installs stuff you need that Apple didn’t. And it’s really simple too! To install Node.js on your system for example, you just do:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;brew install node
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And that’s it! No more messy installers and reading installation guides and stuff.&lt;/p&gt;
+
+&lt;p&gt;While we’re at it and installed node, there’s also &lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt;, a package manager for Node modules. &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;Npm modules&lt;/a&gt; are usually used (but not limited) for Node.js and front-end web development, like SASS/LESS compilers or linters. You’ll learn more about it as you start learning more about the Node environment.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;npm install -g node-sass
+
+&lt;span class=&quot;c&quot;&gt;# Compiles all SASS files in /scss into /css&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;node-sass scss/ -o css/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;install-apps&quot;&gt;Install apps&lt;/h3&gt;
+
+&lt;p&gt;Speaking of Brew, there’s a special Brew utility extension called Cask. You know how when you download macOS apps, you’d open the .dmg file and drag the icon to the Applications folder? Well with Cask, you can install these apps directly through the terminal with just one command, like you would with brew packages!&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# First, install Cask using Brew&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;brew tap caskroom/cask
+
+&lt;span class=&quot;c&quot;&gt;# Then install some apps using cask&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;brew cask install google-chrome
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;brew cask install spotify
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;brew cask install dropbox
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To see the list of available casks, check out their &lt;a href=&quot;https://caskroom.github.io/&quot;&gt;website&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;efficiently-batch-deleteupdate-files&quot;&gt;Efficiently Batch-Delete/Update Files&lt;/h3&gt;
+
+&lt;p&gt;Want to delete all &lt;code class=&quot;highlighter-rouge&quot;&gt;.jpg&lt;/code&gt; files?&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rm -rf *.jpg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Want to move all PDF files from the Downloads folder to the Desktop?&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ mv ~/Downloads/*.pdf ~/Desktop/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Want to copy files whose filenames contain the string &lt;em&gt;document&lt;/em&gt; to Documents folder?&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cp *document* ~/Documents/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You get the point. For everything else, a simple &lt;a href=&quot;https://askubuntu.com/&quot;&gt;AskUbuntu&lt;/a&gt; or &lt;a href=&quot;https://superuser.com/&quot;&gt;SuperUser&lt;/a&gt; search will most likely net you an answer.&lt;/p&gt;
+
+&lt;h3 id=&quot;download-youtube-videos&quot;&gt;Download YouTube videos&lt;/h3&gt;
+
+&lt;p&gt;Yep! No need to use those clunky unreliable YouTube converter thingy websites.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Install youtube-dl via brew&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;brew install youtube-dl
+
+&lt;span class=&quot;c&quot;&gt;# Download a YouTube video!&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;youtube-dl https://www.youtube.com/watch?v&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;xxxxxxxxxxx
+
+&lt;span class=&quot;c&quot;&gt;# Or just extract the audio&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;youtube-dl --extract-audio https://www.youtube.com/watch?v&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;xxxxxxxxxxx
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;There’s a lot of options as well, like choosing the video quality and formats. Check out the &lt;a href=&quot;https://github.com/rg3/youtube-dl/blob/master/README.md#readme&quot;&gt;documentation&lt;/a&gt; for more.&lt;/p&gt;
+
+&lt;h3 id=&quot;convert-videos&quot;&gt;Convert Videos&lt;/h3&gt;
+
+&lt;p&gt;While we’re on the topic of videos: &lt;code class=&quot;highlighter-rouge&quot;&gt;ffmpeg&lt;/code&gt; is a really handy tool for working with videos. Here are a few examples:&lt;/p&gt;
+
+&lt;p&gt;Convert a .mov video to mp4:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ffmpeg -i video.mov output.mp4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Extract audio from the video:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ffmpeg -i video.mp4 -vn audio.mp3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;print-silly-ascii-artwith-rainbow-colors&quot;&gt;Print silly ASCII art—with rainbow colors!&lt;/h3&gt;
+
+&lt;p&gt;And finally, we’re down to the most important commands!&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;brew install cowsay
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;brew install fortune
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;gem install lolcat
+
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;fortune
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;cowsay &lt;span class=&quot;s2&quot;&gt;&quot;Hello world&quot;&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;lolcat -h
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Or just pipe everything!&lt;/p&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://asciinema.org/a/654jhnqxfe0flre4mma0dd4kp.js&quot; id=&quot;asciicast-654jhnqxfe0flre4mma0dd4kp&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;How can you say no to the power of the terminal with that?!&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;“Woohoo! I’m a command line expert now! What do I do next?”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Good for you! You might want to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;learn more about &lt;a href=&quot;https://dotfiles.github.io/&quot;&gt;dotfiles&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;check out some cool commands and tricks at &lt;a href=&quot;http://www.commandlinefu.com/commands/browse&quot;&gt;commandlinefu.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;try &lt;a href=&quot;http://jilles.me/badassify-your-terminal-and-shell/&quot;&gt;pimping your terminal with ZSH&lt;/a&gt; which is another kind of shell (the default one is Bash)&lt;/li&gt;
+  &lt;li&gt;or try &lt;a href=&quot;http://www.openvim.com/&quot;&gt;mastering Vim&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Good luck!&lt;/p&gt;
+
+&lt;p&gt;— Alphonsus&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+</description>
+        <pubDate>Sun, 07 May 2017 00:00:00 +0800</pubDate>
+        <link>alphonsus.github.io/commandlinefu/</link>
+        <guid isPermaLink="true">alphonsus.github.io/commandlinefu/</guid>
+        
+        
+        <category>dev</category>
+        
+      </item>
     
       <item>
         <title>Coding Like a Ninja</title>

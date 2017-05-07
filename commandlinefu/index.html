@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Command Line Fu or: How I Learned to Stop Worrying and Love the Terminal</title>
+  <meta name="description" content="A few years back when then-15-year-old me just started learning software development I always hear about this “terminal,” along with its other counterparts—b...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="alphonsus.github.io/commandlinefu/">
+  <link rel="alternate" type="application/rss+xml" title="Alphonsus" href="alphonsus.github.io/feed.xml">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+</head>
+
+
+<body>
+
+	<header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Alphonsus</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+            
+            <a class="page-link" href="/">About</a>
+          
+        
+          
+            
+            <a class="page-link" href="/blog/">Blog</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+            <a class="page-link" href="/projects">Projects</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+	
+	<div class="page-content">
+		<div class="wrapper">
+			<br>
+			<div class="post">
+
+				<header class="post-header">
+
+					<h1 class="post-title">Command Line Fu or: How I Learned to Stop Worrying and Love the Terminal</h1>
+					<a class="post-meta" href="/commandlinefu/">Posted on May 7, 2017</a>
+
+				</header>
+
+				<article class="post-content">
+					<p>A few years back when then-15-year-old me just started learning software development I always hear about this “terminal,” along with its other counterparts—bash, command line, CLI, the command prompt—and how it’s so useful and how it makes a developer’s life easier.</p>
+
+<p><em><img src="/images/commandlinefu/hughjackman.jpg" alt="" /></em></p>
+
+<p class="img-caption">Hugh Jackman in Swordfish—best hacking scene in a movie ever</p>
+
+<p>Since then I’ve always been intrigued and wanted to learn how to use and master it, but a few “Beginner Terminal Usage” tutorials later, I just can’t get to appreciate how a couple <code class="highlighter-rouge">cd</code>’s and <code class="highlighter-rouge">pwd</code>’s and <code class="highlighter-rouge">ls</code>’s would help me aside from looking cool (like a hacker in the movies). I mean isn’t that what Finder/Windows Explorer is for?</p>
+
+<p>Fast forward a few years of professional software development experience later, terminal usage has become second nature to me (and should to you too!) and it definitely <em>does</em> make one’s life easier—and not just for programming!</p>
+
+<p>This blog post is a love letter to “Past Me” who always wanted to be a command line fu master but just didn’t have any idea where to go next after the <code class="highlighter-rouge">cd</code> and <code class="highlighter-rouge">pwd</code> tutorials—an answer to a question he’s always asking: what real-life applications can I actually do with the terminal?</p>
+
+<h3 id="version-control-git">Version Control (Git)</h3>
+
+<p>Remember that time when you make changes to your source code but want to save a copy of the older file just incase you want to revert back to that version? Of course you do, you posted this on Facebook during college while working on a school project:</p>
+
+<p><em><img src="/images/commandlinefu/files.jpg" alt="" /></em></p>
+
+<p class="img-caption">PROJECT, PROJECT - Copy, PROJECT - Copy (2), project_new, project_new2, project_newest, projecttest, LATEST, LATEST - Copy, LATEST - Copy (2), PROJECT_hardcopypass, PROJECTOFDOOM, projectofawesome, finalproject, backup of final, superfinalproject</p>
+
+<p>Enter version control (a.k.a. source control), with <a href="http://github.com/">Git</a> being the most popular one. It solves that problem—you make “savepoints” of your code called <em>commits</em> and you can revert to them anytime. You usually then push your commits to a version control repository host like <a href="http://github.com/">GitHub</a> or <a href="http://gitlab.com/">GitLab</a>.</p>
+
+<h3 id="ssh">SSH</h3>
+
+<p><em><img src="/images/commandlinefu/im_an_idiot.png" alt="" /></em></p>
+
+<p class="img-caption"> Relevant XKCD. </p>
+
+<p>SSH (Secure Socket Shell) is a way to access a remote computer through the terminal. Think of it as using the terminal of another computer, from your computer—how cool is that!</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ssh remote_username@remote_host
+</code></pre>
+</div>
+
+<p>For example, you can use SSH to deploy your website to a server—you SSH into your Unix/Linux server, install and setup a <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP stack</a>, then clone the Git repository of your website’s source code into your server’s public HTML directory. From then on, you just do a <code class="highlighter-rouge">git pull</code> from your server everytime you push updates to your code—no need for those clunky time-wasting FTP GUI applications!</p>
+
+<h3 id="edit-textsource-code-files">Edit text/source code files</h3>
+
+<p>When you edit files in your local computer you’d definitely use a text editor, right? What if you need to edit files from a remote server via SSH like config files for instance? Well there’s Vi/Vim for that, a text editor for the command line.</p>
+
+<p>It’s got a lot of powerful features and keybindings, and the learning curve is pretty steep, but it’s all worth it and just takes a bit of practice and habit before you actually master it.</p>
+
+<p><img src="/images/commandlinefu/vim.gif" alt="" /></p>
+
+<p class="img-caption">Source: vimgifs.com</p>
+
+<p>P.S. Other alternatives include nano and emacs, but you’ll probably want to just stick with Vim for now, trust me. And you don’t want to get into those vim vs. emacs wars, too!</p>
+
+<h3 id="install-utilities-with-a-package-manager">Install utilities with a package manager</h3>
+
+<p><a href="https://brew.sh/">Homebrew</a> is a package manager for macOS, equivalent to Linux’s <code class="highlighter-rouge">apt</code>. Basically, like what it says on their website, it installs stuff you need that Apple didn’t. And it’s really simple too! To install Node.js on your system for example, you just do:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install node
+</code></pre>
+</div>
+
+<p>And that’s it! No more messy installers and reading installation guides and stuff.</p>
+
+<p>While we’re at it and installed node, there’s also <code class="highlighter-rouge">npm</code>, a package manager for Node modules. <a href="https://www.npmjs.com/">Npm modules</a> are usually used (but not limited) for Node.js and front-end web development, like SASS/LESS compilers or linters. You’ll learn more about it as you start learning more about the Node environment.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm install -g node-sass
+
+<span class="c"># Compiles all SASS files in /scss into /css</span>
+<span class="gp">$ </span>node-sass scss/ -o css/
+</code></pre>
+</div>
+
+<h3 id="install-apps">Install apps</h3>
+
+<p>Speaking of Brew, there’s a special Brew utility extension called Cask. You know how when you download macOS apps, you’d open the .dmg file and drag the icon to the Applications folder? Well with Cask, you can install these apps directly through the terminal with just one command, like you would with brew packages!</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># First, install Cask using Brew</span>
+<span class="gp">$ </span>brew tap caskroom/cask
+
+<span class="c"># Then install some apps using cask</span>
+<span class="gp">$ </span>brew cask install google-chrome
+<span class="gp">$ </span>brew cask install spotify
+<span class="gp">$ </span>brew cask install dropbox
+</code></pre>
+</div>
+
+<p>To see the list of available casks, check out their <a href="https://caskroom.github.io/">website</a>.</p>
+
+<h3 id="efficiently-batch-deleteupdate-files">Efficiently Batch-Delete/Update Files</h3>
+
+<p>Want to delete all <code class="highlighter-rouge">.jpg</code> files?</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ rm -rf *.jpg
+</code></pre>
+</div>
+
+<p>Want to move all PDF files from the Downloads folder to the Desktop?</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ mv ~/Downloads/*.pdf ~/Desktop/
+</code></pre>
+</div>
+
+<p>Want to copy files whose filenames contain the string <em>document</em> to Documents folder?</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cp *document* ~/Documents/
+</code></pre>
+</div>
+
+<p>You get the point. For everything else, a simple <a href="https://askubuntu.com/">AskUbuntu</a> or <a href="https://superuser.com/">SuperUser</a> search will most likely net you an answer.</p>
+
+<h3 id="download-youtube-videos">Download YouTube videos</h3>
+
+<p>Yep! No need to use those clunky unreliable YouTube converter thingy websites.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Install youtube-dl via brew</span>
+<span class="gp">$ </span>brew install youtube-dl
+
+<span class="c"># Download a YouTube video!</span>
+<span class="gp">$ </span>youtube-dl https://www.youtube.com/watch?v<span class="o">=</span>xxxxxxxxxxx
+
+<span class="c"># Or just extract the audio</span>
+<span class="gp">$ </span>youtube-dl --extract-audio https://www.youtube.com/watch?v<span class="o">=</span>xxxxxxxxxxx
+</code></pre>
+</div>
+
+<p>There’s a lot of options as well, like choosing the video quality and formats. Check out the <a href="https://github.com/rg3/youtube-dl/blob/master/README.md#readme">documentation</a> for more.</p>
+
+<h3 id="convert-videos">Convert Videos</h3>
+
+<p>While we’re on the topic of videos: <code class="highlighter-rouge">ffmpeg</code> is a really handy tool for working with videos. Here are a few examples:</p>
+
+<p>Convert a .mov video to mp4:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ffmpeg -i video.mov output.mp4
+</code></pre>
+</div>
+
+<p>Extract audio from the video:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ffmpeg -i video.mp4 -vn audio.mp3
+</code></pre>
+</div>
+
+<h3 id="print-silly-ascii-artwith-rainbow-colors">Print silly ASCII art—with rainbow colors!</h3>
+
+<p>And finally, we’re down to the most important commands!</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install cowsay
+<span class="gp">$ </span>brew install fortune
+<span class="gp">$ </span>gem install lolcat
+
+<span class="gp">$ </span>fortune
+<span class="gp">$ </span>cowsay <span class="s2">"Hello world"</span>
+<span class="gp">$ </span>lolcat -h
+</code></pre>
+</div>
+
+<p>Or just pipe everything!</p>
+
+<script type="text/javascript" src="https://asciinema.org/a/654jhnqxfe0flre4mma0dd4kp.js" id="asciicast-654jhnqxfe0flre4mma0dd4kp" async=""></script>
+
+<p>How can you say no to the power of the terminal with that?!</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p><em>“Woohoo! I’m a command line expert now! What do I do next?”</em></p>
+
+<p>Good for you! You might want to:</p>
+
+<ul>
+  <li>learn more about <a href="https://dotfiles.github.io/">dotfiles</a></li>
+  <li>check out some cool commands and tricks at <a href="http://www.commandlinefu.com/commands/browse">commandlinefu.com</a></li>
+  <li>try <a href="http://jilles.me/badassify-your-terminal-and-shell/">pimping your terminal with ZSH</a> which is another kind of shell (the default one is Bash)</li>
+  <li>or try <a href="http://www.openvim.com/">mastering Vim</a></li>
+</ul>
+
+<p>Good luck!</p>
+
+<p>— Alphonsus</p>
+
+<p> </p>
+
+				</article>
+
+
+				<!-- <div class="post-categories">
+					<ul>
+						
+						<li><a href="#">dev</a></li>
+						
+					</ul>
+				</div> -->
+			</div>
+
+			
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+			/* * * CONFIGURATION VARIABLES * * */
+			var disqus_shortname = 'alphonsus';
+			
+			/* * * DON'T EDIT BELOW THIS LINE * * */
+			(function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+		
+	</div>
+
+</div>
+<footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+    	© 2017 Alfonz Montelibano
+    </div>
+  </div>
+</footer>
+
+
+</body>
+
+</html>

@@ -392,7 +392,11 @@ pre {
       margin-bottom: 50px; }
   .post-content em img {
     margin: 30px -8% 30px -8%;
-    max-width: 116%; }
+    min-width: 116%; }
+  @media screen and (max-width: 812px) {
+    .post-content em img {
+      margin: 30px 0px 30px 0px;
+      min-width: 100%; } }
   .post-content .img-caption {
     text-align: center;
     font-size: 15.75px;
