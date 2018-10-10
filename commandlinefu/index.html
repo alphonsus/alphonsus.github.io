@@ -112,9 +112,8 @@
 
 <p>SSH (Secure Socket Shell) is a way to access a remote computer through the terminal. Think of it as using the terminal of another computer, from your computer—how cool is that!</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ssh remote_username@remote_host
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ssh remote_username@remote_host
+</code></pre></div></div>
 
 <p>For example, you can use SSH to deploy your website to a server—you SSH into your Unix/Linux server, install and setup a <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP stack</a>, then clone the Git repository of your website’s source code into your server’s public HTML directory. From then on, you just do a <code class="highlighter-rouge">git pull</code> from your server everytime you push updates to your code—no need for those clunky time-wasting FTP GUI applications!</p>
 
@@ -124,7 +123,7 @@
 
 <p>It’s got a lot of powerful features and keybindings, and the learning curve is pretty steep, but it’s all worth it and just takes a bit of practice and habit before you actually master it.</p>
 
-<p><img src="/images/commandlinefu/vim.gif" alt="" /></p>
+<p><em><img src="/images/commandlinefu/vim.gif" alt="" /></em></p>
 
 <p class="img-caption">Source: vimgifs.com</p>
 
@@ -134,34 +133,31 @@
 
 <p><a href="https://brew.sh/">Homebrew</a> is a package manager for macOS, equivalent to Linux’s <code class="highlighter-rouge">apt</code>. Basically, like what it says on their website, it installs stuff you need that Apple didn’t. And it’s really simple too! To install Node.js on your system for example, you just do:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install node
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>node
+</code></pre></div></div>
 
 <p>And that’s it! No more messy installers and reading installation guides and stuff.</p>
 
 <p>While we’re at it and installed node, there’s also <code class="highlighter-rouge">npm</code>, a package manager for Node modules. <a href="https://www.npmjs.com/">Npm modules</a> are usually used (but not limited) for Node.js and front-end web development, like SASS/LESS compilers or linters. You’ll learn more about it as you start learning more about the Node environment.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm install -g node-sass
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">-g</span> node-sass
 
 <span class="c"># Compiles all SASS files in /scss into /css</span>
-<span class="gp">$ </span>node-sass scss/ -o css/
-</code></pre>
-</div>
+<span class="nv">$ </span>node-sass scss/ <span class="nt">-o</span> css/
+</code></pre></div></div>
 
 <h3 id="install-apps">Install apps</h3>
 
 <p>Speaking of Brew, there’s a special Brew utility extension called Cask. You know how when you download macOS apps, you’d open the .dmg file and drag the icon to the Applications folder? Well with Cask, you can install these apps directly through the terminal with just one command, like you would with brew packages!</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># First, install Cask using Brew</span>
-<span class="gp">$ </span>brew tap caskroom/cask
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># First, install Cask using Brew</span>
+<span class="nv">$ </span>brew tap caskroom/cask
 
 <span class="c"># Then install some apps using cask</span>
-<span class="gp">$ </span>brew cask install google-chrome
-<span class="gp">$ </span>brew cask install spotify
-<span class="gp">$ </span>brew cask install dropbox
-</code></pre>
-</div>
+<span class="nv">$ </span>brew cask <span class="nb">install </span>google-chrome
+<span class="nv">$ </span>brew cask <span class="nb">install </span>spotify
+<span class="nv">$ </span>brew cask <span class="nb">install </span>dropbox
+</code></pre></div></div>
 
 <p>To see the list of available casks, check out their <a href="https://caskroom.github.io/">website</a>.</p>
 
@@ -169,21 +165,18 @@
 
 <p>Want to delete all <code class="highlighter-rouge">.jpg</code> files?</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ rm -rf *.jpg
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rm -rf *.jpg
+</code></pre></div></div>
 
 <p>Want to move all PDF files from the Downloads folder to the Desktop?</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ mv ~/Downloads/*.pdf ~/Desktop/
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mv ~/Downloads/*.pdf ~/Desktop/
+</code></pre></div></div>
 
 <p>Want to copy files whose filenames contain the string <em>document</em> to Documents folder?</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cp *document* ~/Documents/
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cp *document* ~/Documents/
+</code></pre></div></div>
 
 <p>You get the point. For everything else, a simple <a href="https://askubuntu.com/">AskUbuntu</a> or <a href="https://superuser.com/">SuperUser</a> search will most likely net you an answer.</p>
 
@@ -191,16 +184,15 @@
 
 <p>Yep! No need to use those clunky unreliable YouTube converter thingy websites.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Install youtube-dl via brew</span>
-<span class="gp">$ </span>brew install youtube-dl
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Install youtube-dl via brew</span>
+<span class="nv">$ </span>brew <span class="nb">install </span>youtube-dl
 
 <span class="c"># Download a YouTube video!</span>
-<span class="gp">$ </span>youtube-dl https://www.youtube.com/watch?v<span class="o">=</span>xxxxxxxxxxx
+<span class="nv">$ </span>youtube-dl https://www.youtube.com/watch?v<span class="o">=</span>xxxxxxxxxxx
 
 <span class="c"># Or just extract the audio</span>
-<span class="gp">$ </span>youtube-dl --extract-audio https://www.youtube.com/watch?v<span class="o">=</span>xxxxxxxxxxx
-</code></pre>
-</div>
+<span class="nv">$ </span>youtube-dl <span class="nt">--extract-audio</span> https://www.youtube.com/watch?v<span class="o">=</span>xxxxxxxxxxx
+</code></pre></div></div>
 
 <p>There’s a lot of options as well, like choosing the video quality and formats. Check out the <a href="https://github.com/rg3/youtube-dl/blob/master/README.md#readme">documentation</a> for more.</p>
 
@@ -210,29 +202,26 @@
 
 <p>Convert a .mov video to mp4:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ ffmpeg -i video.mov output.mp4
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ffmpeg -i video.mov output.mp4
+</code></pre></div></div>
 
 <p>Extract audio from the video:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ ffmpeg -i video.mp4 -vn audio.mp3
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ffmpeg -i video.mp4 -vn audio.mp3
+</code></pre></div></div>
 
 <h3 id="print-silly-ascii-artwith-rainbow-colors">Print silly ASCII art—with rainbow colors!</h3>
 
 <p>And finally, we’re down to the most important commands!</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install cowsay
-<span class="gp">$ </span>brew install fortune
-<span class="gp">$ </span>gem install lolcat
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>cowsay
+<span class="nv">$ </span>brew <span class="nb">install </span>fortune
+<span class="nv">$ </span>gem <span class="nb">install </span>lolcat
 
-<span class="gp">$ </span>fortune
-<span class="gp">$ </span>cowsay <span class="s2">"Hello world"</span>
-<span class="gp">$ </span>lolcat -h
-</code></pre>
-</div>
+<span class="nv">$ </span>fortune
+<span class="nv">$ </span>cowsay <span class="s2">"Hello world"</span>
+<span class="nv">$ </span>lolcat <span class="nt">-h</span>
+</code></pre></div></div>
 
 <p>Or just pipe everything!</p>
 

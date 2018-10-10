@@ -113,7 +113,7 @@
   <li>
     <p>The “Twitter username” field when editing your Ludum Dare profile is really vague – a lot of people type in “twitter.com/username”, or “http://twitter.com/username” when all you really need is just your plain username and it’s automatically prepended with a @. This means I have to clean it up a bit so it properly mentions the developer in the tweet.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> if 'http://twitter.com/' in twitterHandle:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> if 'http://twitter.com/' in twitterHandle:
      twitterUser = twitterHandle.replace("http://twitter.com/", "")
  elif 'https://twitter.com/' in twitterHandle:
      twitterUser = twitterHandle.replace("https://twitter.com/", "")
@@ -121,34 +121,30 @@
      twitterUser = twitterHandle.replace("http://www.twitter.com/", "")
  elif 'https://www.twitter.com/' in twitterHandle:
      twitterUser = twitterHandle.replace("https://www.twitter.com/", "")
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Prepare the tweet, making sure it fits 140 characters by trimming the title and adding an ellipsis:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> tweet = title + ' by ' + author + ' - ' + url + ' #LDJAM #gamedev #indiedev' 
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> tweet = title + ' by ' + author + ' - ' + url + ' #LDJAM #gamedev #indiedev' 
 
  if len(tweet) &gt; 140:
  charactersToTrim = len(tweet) - 137
  title = title[:-charactersToTrim] + '...'
  tweet = title + ' by ' + author + ' - ' + url + ' #LDJAM #gamedev #indiedev' 
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Finally, tweet it! The tweepy library has a method to post a tweet with media.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> tweetStatus = api.update_with_media('img.jpg', tweet)
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> tweetStatus = api.update_with_media('img.jpg', tweet)
+</code></pre></div>    </div>
   </li>
   <li>
     <p>At this point I would simply run the python script every 30 minutes using CRON or a bash script. I also use <a href="https://pypi.python.org/pypi/pync">Notifier</a> to ping me a native OS X notification so I would know when the bot actually tweets a game.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> Notifier.notify(title + ' by ' + author + ' ' + twitterHandle, contentImage='img.jpg', appIcon='pp.png', title='@LDJAMBot', open='http://twitter.com/ldjambot')
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Notifier.notify(title + ' by ' + author + ' ' + twitterHandle, contentImage='img.jpg', appIcon='pp.png', title='@LDJAMBot', open='http://twitter.com/ldjambot')
+</code></pre></div>    </div>
   </li>
 </ol>
 

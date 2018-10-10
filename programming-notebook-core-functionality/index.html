@@ -109,7 +109,7 @@
 
 <p>Creating a new note and saving it to the database looks something like this:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// Require lowdb</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Require lowdb</span>
 <span class="kd">var</span> <span class="nx">low</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'lowdb'</span><span class="p">);</span>
 
 <span class="c1">// Initialize database</span>
@@ -117,22 +117,20 @@
 
 <span class="c1">// Save note</span>
 <span class="kd">var</span> <span class="nx">newNote</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'id'</span><span class="p">:</span> <span class="nx">uuid</span><span class="p">.</span><span class="nx">v4</span><span class="p">(),</span> <span class="s1">'body'</span><span class="p">:</span><span class="s1">'Type something...'</span><span class="p">,</span> <span class="s1">'updated_at'</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()}</span>
-<span class="nx">db</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'notes'</span><span class="p">).</span><span class="nx">push</span><span class="p">(</span><span class="nx">newNote</span><span class="p">).</span><span class="nx">value</span><span class="p">()</span>
-</code></pre>
-</div>
+<span class="nx">db</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'notes'</span><span class="p">).</span><span class="nx">push</span><span class="p">(</span><span class="nx">newNote</span><span class="p">).</span><span class="nx">value</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p>And retrieving notes is as simple as:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">defaults</span><span class="p">({</span><span class="s1">'notes'</span><span class="p">:</span> <span class="p">[]}).</span><span class="nx">value</span><span class="p">()</span>
-<span class="kd">var</span> <span class="nx">notes</span> <span class="o">=</span> <span class="nx">db</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'notes'</span><span class="p">).</span><span class="nx">value</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">defaults</span><span class="p">({</span><span class="s1">'notes'</span><span class="p">:</span> <span class="p">[]}).</span><span class="nx">value</span><span class="p">()</span>
+<span class="kd">var</span> <span class="nx">notes</span> <span class="o">=</span> <span class="nx">db</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'notes'</span><span class="p">).</span><span class="nx">value</span><span class="p">()</span>
 
 <span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">note</span><span class="p">){</span>
   <span class="c1">// Do something with note...</span>
   <span class="c1">// console.log(note.body)</span>
   <span class="c1">// console.log(note.updated_at)</span>
 <span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="adding-text-editor-ish-features">Adding Text Editor-ish Features</h2>
 
@@ -142,17 +140,16 @@
 
 <p><strong>HTML template (index.html)</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"editor"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"editor"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;pre</span> <span class="na">id=</span><span class="s">"editor-textarea"</span><span class="nt">&gt;&lt;/pre&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>And used the following settings:</p>
 
 <p><strong>Renderer process (app.js)</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">editor</span> <span class="o">=</span> <span class="nx">ace</span><span class="p">.</span><span class="nx">edit</span><span class="p">(</span><span class="s2">"editor-textarea"</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">editor</span> <span class="o">=</span> <span class="nx">ace</span><span class="p">.</span><span class="nx">edit</span><span class="p">(</span><span class="s2">"editor-textarea"</span><span class="p">);</span>
 <span class="nx">editor</span><span class="p">.</span><span class="nx">setTheme</span><span class="p">(</span><span class="s2">"ace/theme/github"</span><span class="p">);</span>
 <span class="nx">editor</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">setMode</span><span class="p">(</span><span class="s2">"ace/mode/markdown"</span><span class="p">);</span>
 <span class="nx">editor</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span>
@@ -167,8 +164,7 @@
 <span class="p">});</span>
 
 <span class="nx">editor</span><span class="p">.</span><span class="nx">container</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">lineHeight</span> <span class="o">=</span> <span class="mf">1.4</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now we have a markdown editor with markdown syntax highlighting and IDE/text editor keystrokes. Oh and it’s highly customizable too!</p>
 
